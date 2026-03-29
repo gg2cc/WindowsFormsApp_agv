@@ -1,0 +1,1243 @@
+﻿AGV编号,寄存器地址,寄存器名称,说明,单位,类型,备注
+1,0,X,位置X,0.01m,short,AGV状态上送
+1,1,Y,位置Y,0.01m,short,AGV状态上送
+1,2,Yaw,朝向角,0.1deg,short,AGV状态上送
+1,3,PathPoint,当前路径点索引,,short,AGV状态上送
+1,4,PathSeg,当前路径段索引,,short,AGV状态上送
+1,5,Vx,速度X,mm/s,short,AGV状态上送
+1,6,Vy,速度Y,mm/s,short,AGV状态上送
+1,7,W,角速度,0.001rad/s,short,AGV状态上送
+1,8,Mode,模式,0=手动;1=自动;2=导航,short,AGV状态上送
+1,9,RunState,运行状态,0=停止;1=启动;2=暂停,short,AGV状态上送
+1,10,NaviState,导航状态,0=空闲;1=导航中;2=避障中;3=导航错误,short,AGV状态上送
+1,50,CmdType,全局命令,1=启动;2=停止;3=暂停,ushort,PC下发
+1,51,CmdValue,命令触发标志,1=有效,ushort,PC下发
+1,52,SelectedRoute,当前选中工艺路线,1-10,ushort,PC下发
+1,100,Route1_Point1_PathId,工艺路线1-点1-路径ID,1-1000,short,PC预置
+1,101,Route1_Point1_Delay,工艺路线1-点1-延时,0.1秒,short,PC预置
+1,102,Route1_Point1_Rotate,工艺路线1-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,103,Route1_Point1_MaxSpeed,工艺路线1-点1-旋转速度,deg/s,short,PC预置
+1,104,Route1_Point2_PathId,工艺路线1-点2-路径ID,1-1000,short,PC预置
+1,105,Route1_Point2_Delay,工艺路线1-点2-延时,0.1秒,short,PC预置
+1,106,Route1_Point2_Rotate,工艺路线1-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,107,Route1_Point2_MaxSpeed,工艺路线1-点2-旋转速度,deg/s,short,PC预置
+1,108,Route1_Point3_PathId,工艺路线1-点3-路径ID,1-1000,short,PC预置
+1,109,Route1_Point3_Delay,工艺路线1-点3-延时,0.1秒,short,PC预置
+1,110,Route1_Point3_Rotate,工艺路线1-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,111,Route1_Point3_MaxSpeed,工艺路线1-点3-旋转速度,deg/s,short,PC预置
+1,112,Route1_Point4_PathId,工艺路线1-点4-路径ID,1-1000,short,PC预置
+1,113,Route1_Point4_Delay,工艺路线1-点4-延时,0.1秒,short,PC预置
+1,114,Route1_Point4_Rotate,工艺路线1-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,115,Route1_Point4_MaxSpeed,工艺路线1-点4-旋转速度,deg/s,short,PC预置
+1,116,Route1_Point5_PathId,工艺路线1-点5-路径ID,1-1000,short,PC预置
+1,117,Route1_Point5_Delay,工艺路线1-点5-延时,0.1秒,short,PC预置
+1,118,Route1_Point5_Rotate,工艺路线1-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,119,Route1_Point5_MaxSpeed,工艺路线1-点5-旋转速度,deg/s,short,PC预置
+1,120,Route1_Point6_PathId,工艺路线1-点6-路径ID,1-1000,short,PC预置
+1,121,Route1_Point6_Delay,工艺路线1-点6-延时,0.1秒,short,PC预置
+1,122,Route1_Point6_Rotate,工艺路线1-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,123,Route1_Point6_MaxSpeed,工艺路线1-点6-旋转速度,deg/s,short,PC预置
+1,124,Route1_Point7_PathId,工艺路线1-点7-路径ID,1-1000,short,PC预置
+1,125,Route1_Point7_Delay,工艺路线1-点7-延时,0.1秒,short,PC预置
+1,126,Route1_Point7_Rotate,工艺路线1-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,127,Route1_Point7_MaxSpeed,工艺路线1-点7-旋转速度,deg/s,short,PC预置
+1,128,Route1_Point8_PathId,工艺路线1-点8-路径ID,1-1000,short,PC预置
+1,129,Route1_Point8_Delay,工艺路线1-点8-延时,0.1秒,short,PC预置
+1,130,Route1_Point8_Rotate,工艺路线1-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,131,Route1_Point8_MaxSpeed,工艺路线1-点8-旋转速度,deg/s,short,PC预置
+1,132,Route1_Point9_PathId,工艺路线1-点9-路径ID,1-1000,short,PC预置
+1,133,Route1_Point9_Delay,工艺路线1-点9-延时,0.1秒,short,PC预置
+1,134,Route1_Point9_Rotate,工艺路线1-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,135,Route1_Point9_MaxSpeed,工艺路线1-点9-旋转速度,deg/s,short,PC预置
+1,136,Route1_Point10_PathId,工艺路线1-点10-路径ID,1-1000,short,PC预置
+1,137,Route1_Point10_Delay,工艺路线1-点10-延时,0.1秒,short,PC预置
+1,138,Route1_Point10_Rotate,工艺路线1-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,139,Route1_Point10_MaxSpeed,工艺路线1-点10-旋转速度,deg/s,short,PC预置
+1,140,Route2_Point1_PathId,工艺路线2-点1-路径ID,1-1000,short,PC预置
+1,141,Route2_Point1_Delay,工艺路线2-点1-延时,0.1秒,short,PC预置
+1,142,Route2_Point1_Rotate,工艺路线2-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,143,Route2_Point1_MaxSpeed,工艺路线2-点1-旋转速度,deg/s,short,PC预置
+1,144,Route2_Point2_PathId,工艺路线2-点2-路径ID,1-1000,short,PC预置
+1,145,Route2_Point2_Delay,工艺路线2-点2-延时,0.1秒,short,PC预置
+1,146,Route2_Point2_Rotate,工艺路线2-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,147,Route2_Point2_MaxSpeed,工艺路线2-点2-旋转速度,deg/s,short,PC预置
+1,148,Route2_Point3_PathId,工艺路线2-点3-路径ID,1-1000,short,PC预置
+1,149,Route2_Point3_Delay,工艺路线2-点3-延时,0.1秒,short,PC预置
+1,150,Route2_Point3_Rotate,工艺路线2-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,151,Route2_Point3_MaxSpeed,工艺路线2-点3-旋转速度,deg/s,short,PC预置
+1,152,Route2_Point4_PathId,工艺路线2-点4-路径ID,1-1000,short,PC预置
+1,153,Route2_Point4_Delay,工艺路线2-点4-延时,0.1秒,short,PC预置
+1,154,Route2_Point4_Rotate,工艺路线2-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,155,Route2_Point4_MaxSpeed,工艺路线2-点4-旋转速度,deg/s,short,PC预置
+1,156,Route2_Point5_PathId,工艺路线2-点5-路径ID,1-1000,short,PC预置
+1,157,Route2_Point5_Delay,工艺路线2-点5-延时,0.1秒,short,PC预置
+1,158,Route2_Point5_Rotate,工艺路线2-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,159,Route2_Point5_MaxSpeed,工艺路线2-点5-旋转速度,deg/s,short,PC预置
+1,160,Route2_Point6_PathId,工艺路线2-点6-路径ID,1-1000,short,PC预置
+1,161,Route2_Point6_Delay,工艺路线2-点6-延时,0.1秒,short,PC预置
+1,162,Route2_Point6_Rotate,工艺路线2-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,163,Route2_Point6_MaxSpeed,工艺路线2-点6-旋转速度,deg/s,short,PC预置
+1,164,Route2_Point7_PathId,工艺路线2-点7-路径ID,1-1000,short,PC预置
+1,165,Route2_Point7_Delay,工艺路线2-点7-延时,0.1秒,short,PC预置
+1,166,Route2_Point7_Rotate,工艺路线2-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,167,Route2_Point7_MaxSpeed,工艺路线2-点7-旋转速度,deg/s,short,PC预置
+1,168,Route2_Point8_PathId,工艺路线2-点8-路径ID,1-1000,short,PC预置
+1,169,Route2_Point8_Delay,工艺路线2-点8-延时,0.1秒,short,PC预置
+1,170,Route2_Point8_Rotate,工艺路线2-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,171,Route2_Point8_MaxSpeed,工艺路线2-点8-旋转速度,deg/s,short,PC预置
+1,172,Route2_Point9_PathId,工艺路线2-点9-路径ID,1-1000,short,PC预置
+1,173,Route2_Point9_Delay,工艺路线2-点9-延时,0.1秒,short,PC预置
+1,174,Route2_Point9_Rotate,工艺路线2-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,175,Route2_Point9_MaxSpeed,工艺路线2-点9-旋转速度,deg/s,short,PC预置
+1,176,Route2_Point10_PathId,工艺路线2-点10-路径ID,1-1000,short,PC预置
+1,177,Route2_Point10_Delay,工艺路线2-点10-延时,0.1秒,short,PC预置
+1,178,Route2_Point10_Rotate,工艺路线2-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,179,Route2_Point10_MaxSpeed,工艺路线2-点10-旋转速度,deg/s,short,PC预置
+1,180,Route3_Point1_PathId,工艺路线3-点1-路径ID,1-1000,short,PC预置
+1,181,Route3_Point1_Delay,工艺路线3-点1-延时,0.1秒,short,PC预置
+1,182,Route3_Point1_Rotate,工艺路线3-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,183,Route3_Point1_MaxSpeed,工艺路线3-点1-旋转速度,deg/s,short,PC预置
+1,184,Route3_Point2_PathId,工艺路线3-点2-路径ID,1-1000,short,PC预置
+1,185,Route3_Point2_Delay,工艺路线3-点2-延时,0.1秒,short,PC预置
+1,186,Route3_Point2_Rotate,工艺路线3-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,187,Route3_Point2_MaxSpeed,工艺路线3-点2-旋转速度,deg/s,short,PC预置
+1,188,Route3_Point3_PathId,工艺路线3-点3-路径ID,1-1000,short,PC预置
+1,189,Route3_Point3_Delay,工艺路线3-点3-延时,0.1秒,short,PC预置
+1,190,Route3_Point3_Rotate,工艺路线3-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,191,Route3_Point3_MaxSpeed,工艺路线3-点3-旋转速度,deg/s,short,PC预置
+1,192,Route3_Point4_PathId,工艺路线3-点4-路径ID,1-1000,short,PC预置
+1,193,Route3_Point4_Delay,工艺路线3-点4-延时,0.1秒,short,PC预置
+1,194,Route3_Point4_Rotate,工艺路线3-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,195,Route3_Point4_MaxSpeed,工艺路线3-点4-旋转速度,deg/s,short,PC预置
+1,196,Route3_Point5_PathId,工艺路线3-点5-路径ID,1-1000,short,PC预置
+1,197,Route3_Point5_Delay,工艺路线3-点5-延时,0.1秒,short,PC预置
+1,198,Route3_Point5_Rotate,工艺路线3-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,199,Route3_Point5_MaxSpeed,工艺路线3-点5-旋转速度,deg/s,short,PC预置
+1,200,Route3_Point6_PathId,工艺路线3-点6-路径ID,1-1000,short,PC预置
+1,201,Route3_Point6_Delay,工艺路线3-点6-延时,0.1秒,short,PC预置
+1,202,Route3_Point6_Rotate,工艺路线3-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,203,Route3_Point6_MaxSpeed,工艺路线3-点6-旋转速度,deg/s,short,PC预置
+1,204,Route3_Point7_PathId,工艺路线3-点7-路径ID,1-1000,short,PC预置
+1,205,Route3_Point7_Delay,工艺路线3-点7-延时,0.1秒,short,PC预置
+1,206,Route3_Point7_Rotate,工艺路线3-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,207,Route3_Point7_MaxSpeed,工艺路线3-点7-旋转速度,deg/s,short,PC预置
+1,208,Route3_Point8_PathId,工艺路线3-点8-路径ID,1-1000,short,PC预置
+1,209,Route3_Point8_Delay,工艺路线3-点8-延时,0.1秒,short,PC预置
+1,210,Route3_Point8_Rotate,工艺路线3-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,211,Route3_Point8_MaxSpeed,工艺路线3-点8-旋转速度,deg/s,short,PC预置
+1,212,Route3_Point9_PathId,工艺路线3-点9-路径ID,1-1000,short,PC预置
+1,213,Route3_Point9_Delay,工艺路线3-点9-延时,0.1秒,short,PC预置
+1,214,Route3_Point9_Rotate,工艺路线3-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,215,Route3_Point9_MaxSpeed,工艺路线3-点9-旋转速度,deg/s,short,PC预置
+1,216,Route3_Point10_PathId,工艺路线3-点10-路径ID,1-1000,short,PC预置
+1,217,Route3_Point10_Delay,工艺路线3-点10-延时,0.1秒,short,PC预置
+1,218,Route3_Point10_Rotate,工艺路线3-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,219,Route3_Point10_MaxSpeed,工艺路线3-点10-旋转速度,deg/s,short,PC预置
+1,220,Route4_Point1_PathId,工艺路线4-点1-路径ID,1-1000,short,PC预置
+1,221,Route4_Point1_Delay,工艺路线4-点1-延时,0.1秒,short,PC预置
+1,222,Route4_Point1_Rotate,工艺路线4-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,223,Route4_Point1_MaxSpeed,工艺路线4-点1-旋转速度,deg/s,short,PC预置
+1,224,Route4_Point2_PathId,工艺路线4-点2-路径ID,1-1000,short,PC预置
+1,225,Route4_Point2_Delay,工艺路线4-点2-延时,0.1秒,short,PC预置
+1,226,Route4_Point2_Rotate,工艺路线4-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,227,Route4_Point2_MaxSpeed,工艺路线4-点2-旋转速度,deg/s,short,PC预置
+1,228,Route4_Point3_PathId,工艺路线4-点3-路径ID,1-1000,short,PC预置
+1,229,Route4_Point3_Delay,工艺路线4-点3-延时,0.1秒,short,PC预置
+1,230,Route4_Point3_Rotate,工艺路线4-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,231,Route4_Point3_MaxSpeed,工艺路线4-点3-旋转速度,deg/s,short,PC预置
+1,232,Route4_Point4_PathId,工艺路线4-点4-路径ID,1-1000,short,PC预置
+1,233,Route4_Point4_Delay,工艺路线4-点4-延时,0.1秒,short,PC预置
+1,234,Route4_Point4_Rotate,工艺路线4-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,235,Route4_Point4_MaxSpeed,工艺路线4-点4-旋转速度,deg/s,short,PC预置
+1,236,Route4_Point5_PathId,工艺路线4-点5-路径ID,1-1000,short,PC预置
+1,237,Route4_Point5_Delay,工艺路线4-点5-延时,0.1秒,short,PC预置
+1,238,Route4_Point5_Rotate,工艺路线4-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,239,Route4_Point5_MaxSpeed,工艺路线4-点5-旋转速度,deg/s,short,PC预置
+1,240,Route4_Point6_PathId,工艺路线4-点6-路径ID,1-1000,short,PC预置
+1,241,Route4_Point6_Delay,工艺路线4-点6-延时,0.1秒,short,PC预置
+1,242,Route4_Point6_Rotate,工艺路线4-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,243,Route4_Point6_MaxSpeed,工艺路线4-点6-旋转速度,deg/s,short,PC预置
+1,244,Route4_Point7_PathId,工艺路线4-点7-路径ID,1-1000,short,PC预置
+1,245,Route4_Point7_Delay,工艺路线4-点7-延时,0.1秒,short,PC预置
+1,246,Route4_Point7_Rotate,工艺路线4-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,247,Route4_Point7_MaxSpeed,工艺路线4-点7-旋转速度,deg/s,short,PC预置
+1,248,Route4_Point8_PathId,工艺路线4-点8-路径ID,1-1000,short,PC预置
+1,249,Route4_Point8_Delay,工艺路线4-点8-延时,0.1秒,short,PC预置
+1,250,Route4_Point8_Rotate,工艺路线4-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,251,Route4_Point8_MaxSpeed,工艺路线4-点8-旋转速度,deg/s,short,PC预置
+1,252,Route4_Point9_PathId,工艺路线4-点9-路径ID,1-1000,short,PC预置
+1,253,Route4_Point9_Delay,工艺路线4-点9-延时,0.1秒,short,PC预置
+1,254,Route4_Point9_Rotate,工艺路线4-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,255,Route4_Point9_MaxSpeed,工艺路线4-点9-旋转速度,deg/s,short,PC预置
+1,256,Route4_Point10_PathId,工艺路线4-点10-路径ID,1-1000,short,PC预置
+1,257,Route4_Point10_Delay,工艺路线4-点10-延时,0.1秒,short,PC预置
+1,258,Route4_Point10_Rotate,工艺路线4-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,259,Route4_Point10_MaxSpeed,工艺路线4-点10-旋转速度,deg/s,short,PC预置
+1,260,Route5_Point1_PathId,工艺路线5-点1-路径ID,1-1000,short,PC预置
+1,261,Route5_Point1_Delay,工艺路线5-点1-延时,0.1秒,short,PC预置
+1,262,Route5_Point1_Rotate,工艺路线5-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,263,Route5_Point1_MaxSpeed,工艺路线5-点1-旋转速度,deg/s,short,PC预置
+1,264,Route5_Point2_PathId,工艺路线5-点2-路径ID,1-1000,short,PC预置
+1,265,Route5_Point2_Delay,工艺路线5-点2-延时,0.1秒,short,PC预置
+1,266,Route5_Point2_Rotate,工艺路线5-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,267,Route5_Point2_MaxSpeed,工艺路线5-点2-旋转速度,deg/s,short,PC预置
+1,268,Route5_Point3_PathId,工艺路线5-点3-路径ID,1-1000,short,PC预置
+1,269,Route5_Point3_Delay,工艺路线5-点3-延时,0.1秒,short,PC预置
+1,270,Route5_Point3_Rotate,工艺路线5-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,271,Route5_Point3_MaxSpeed,工艺路线5-点3-旋转速度,deg/s,short,PC预置
+1,272,Route5_Point4_PathId,工艺路线5-点4-路径ID,1-1000,short,PC预置
+1,273,Route5_Point4_Delay,工艺路线5-点4-延时,0.1秒,short,PC预置
+1,274,Route5_Point4_Rotate,工艺路线5-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,275,Route5_Point4_MaxSpeed,工艺路线5-点4-旋转速度,deg/s,short,PC预置
+1,276,Route5_Point5_PathId,工艺路线5-点5-路径ID,1-1000,short,PC预置
+1,277,Route5_Point5_Delay,工艺路线5-点5-延时,0.1秒,short,PC预置
+1,278,Route5_Point5_Rotate,工艺路线5-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,279,Route5_Point5_MaxSpeed,工艺路线5-点5-旋转速度,deg/s,short,PC预置
+1,280,Route5_Point6_PathId,工艺路线5-点6-路径ID,1-1000,short,PC预置
+1,281,Route5_Point6_Delay,工艺路线5-点6-延时,0.1秒,short,PC预置
+1,282,Route5_Point6_Rotate,工艺路线5-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,283,Route5_Point6_MaxSpeed,工艺路线5-点6-旋转速度,deg/s,short,PC预置
+1,284,Route5_Point7_PathId,工艺路线5-点7-路径ID,1-1000,short,PC预置
+1,285,Route5_Point7_Delay,工艺路线5-点7-延时,0.1秒,short,PC预置
+1,286,Route5_Point7_Rotate,工艺路线5-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,287,Route5_Point7_MaxSpeed,工艺路线5-点7-旋转速度,deg/s,short,PC预置
+1,288,Route5_Point8_PathId,工艺路线5-点8-路径ID,1-1000,short,PC预置
+1,289,Route5_Point8_Delay,工艺路线5-点8-延时,0.1秒,short,PC预置
+1,290,Route5_Point8_Rotate,工艺路线5-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,291,Route5_Point8_MaxSpeed,工艺路线5-点8-旋转速度,deg/s,short,PC预置
+1,292,Route5_Point9_PathId,工艺路线5-点9-路径ID,1-1000,short,PC预置
+1,293,Route5_Point9_Delay,工艺路线5-点9-延时,0.1秒,short,PC预置
+1,294,Route5_Point9_Rotate,工艺路线5-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,295,Route5_Point9_MaxSpeed,工艺路线5-点9-旋转速度,deg/s,short,PC预置
+1,296,Route5_Point10_PathId,工艺路线5-点10-路径ID,1-1000,short,PC预置
+1,297,Route5_Point10_Delay,工艺路线5-点10-延时,0.1秒,short,PC预置
+1,298,Route5_Point10_Rotate,工艺路线5-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,299,Route5_Point10_MaxSpeed,工艺路线5-点10-旋转速度,deg/s,short,PC预置
+1,300,Route6_Point1_PathId,工艺路线6-点1-路径ID,1-1000,short,PC预置
+1,301,Route6_Point1_Delay,工艺路线6-点1-延时,0.1秒,short,PC预置
+1,302,Route6_Point1_Rotate,工艺路线6-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,303,Route6_Point1_MaxSpeed,工艺路线6-点1-旋转速度,deg/s,short,PC预置
+1,304,Route6_Point2_PathId,工艺路线6-点2-路径ID,1-1000,short,PC预置
+1,305,Route6_Point2_Delay,工艺路线6-点2-延时,0.1秒,short,PC预置
+1,306,Route6_Point2_Rotate,工艺路线6-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,307,Route6_Point2_MaxSpeed,工艺路线6-点2-旋转速度,deg/s,short,PC预置
+1,308,Route6_Point3_PathId,工艺路线6-点3-路径ID,1-1000,short,PC预置
+1,309,Route6_Point3_Delay,工艺路线6-点3-延时,0.1秒,short,PC预置
+1,310,Route6_Point3_Rotate,工艺路线6-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,311,Route6_Point3_MaxSpeed,工艺路线6-点3-旋转速度,deg/s,short,PC预置
+1,312,Route6_Point4_PathId,工艺路线6-点4-路径ID,1-1000,short,PC预置
+1,313,Route6_Point4_Delay,工艺路线6-点4-延时,0.1秒,short,PC预置
+1,314,Route6_Point4_Rotate,工艺路线6-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,315,Route6_Point4_MaxSpeed,工艺路线6-点4-旋转速度,deg/s,short,PC预置
+1,316,Route6_Point5_PathId,工艺路线6-点5-路径ID,1-1000,short,PC预置
+1,317,Route6_Point5_Delay,工艺路线6-点5-延时,0.1秒,short,PC预置
+1,318,Route6_Point5_Rotate,工艺路线6-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,319,Route6_Point5_MaxSpeed,工艺路线6-点5-旋转速度,deg/s,short,PC预置
+1,320,Route6_Point6_PathId,工艺路线6-点6-路径ID,1-1000,short,PC预置
+1,321,Route6_Point6_Delay,工艺路线6-点6-延时,0.1秒,short,PC预置
+1,322,Route6_Point6_Rotate,工艺路线6-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,323,Route6_Point6_MaxSpeed,工艺路线6-点6-旋转速度,deg/s,short,PC预置
+1,324,Route6_Point7_PathId,工艺路线6-点7-路径ID,1-1000,short,PC预置
+1,325,Route6_Point7_Delay,工艺路线6-点7-延时,0.1秒,short,PC预置
+1,326,Route6_Point7_Rotate,工艺路线6-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,327,Route6_Point7_MaxSpeed,工艺路线6-点7-旋转速度,deg/s,short,PC预置
+1,328,Route6_Point8_PathId,工艺路线6-点8-路径ID,1-1000,short,PC预置
+1,329,Route6_Point8_Delay,工艺路线6-点8-延时,0.1秒,short,PC预置
+1,330,Route6_Point8_Rotate,工艺路线6-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,331,Route6_Point8_MaxSpeed,工艺路线6-点8-旋转速度,deg/s,short,PC预置
+1,332,Route6_Point9_PathId,工艺路线6-点9-路径ID,1-1000,short,PC预置
+1,333,Route6_Point9_Delay,工艺路线6-点9-延时,0.1秒,short,PC预置
+1,334,Route6_Point9_Rotate,工艺路线6-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,335,Route6_Point9_MaxSpeed,工艺路线6-点9-旋转速度,deg/s,short,PC预置
+1,336,Route6_Point10_PathId,工艺路线6-点10-路径ID,1-1000,short,PC预置
+1,337,Route6_Point10_Delay,工艺路线6-点10-延时,0.1秒,short,PC预置
+1,338,Route6_Point10_Rotate,工艺路线6-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,339,Route6_Point10_MaxSpeed,工艺路线6-点10-旋转速度,deg/s,short,PC预置
+1,340,Route7_Point1_PathId,工艺路线7-点1-路径ID,1-1000,short,PC预置
+1,341,Route7_Point1_Delay,工艺路线7-点1-延时,0.1秒,short,PC预置
+1,342,Route7_Point1_Rotate,工艺路线7-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,343,Route7_Point1_MaxSpeed,工艺路线7-点1-旋转速度,deg/s,short,PC预置
+1,344,Route7_Point2_PathId,工艺路线7-点2-路径ID,1-1000,short,PC预置
+1,345,Route7_Point2_Delay,工艺路线7-点2-延时,0.1秒,short,PC预置
+1,346,Route7_Point2_Rotate,工艺路线7-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,347,Route7_Point2_MaxSpeed,工艺路线7-点2-旋转速度,deg/s,short,PC预置
+1,348,Route7_Point3_PathId,工艺路线7-点3-路径ID,1-1000,short,PC预置
+1,349,Route7_Point3_Delay,工艺路线7-点3-延时,0.1秒,short,PC预置
+1,350,Route7_Point3_Rotate,工艺路线7-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,351,Route7_Point3_MaxSpeed,工艺路线7-点3-旋转速度,deg/s,short,PC预置
+1,352,Route7_Point4_PathId,工艺路线7-点4-路径ID,1-1000,short,PC预置
+1,353,Route7_Point4_Delay,工艺路线7-点4-延时,0.1秒,short,PC预置
+1,354,Route7_Point4_Rotate,工艺路线7-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,355,Route7_Point4_MaxSpeed,工艺路线7-点4-旋转速度,deg/s,short,PC预置
+1,356,Route7_Point5_PathId,工艺路线7-点5-路径ID,1-1000,short,PC预置
+1,357,Route7_Point5_Delay,工艺路线7-点5-延时,0.1秒,short,PC预置
+1,358,Route7_Point5_Rotate,工艺路线7-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,359,Route7_Point5_MaxSpeed,工艺路线7-点5-旋转速度,deg/s,short,PC预置
+1,360,Route7_Point6_PathId,工艺路线7-点6-路径ID,1-1000,short,PC预置
+1,361,Route7_Point6_Delay,工艺路线7-点6-延时,0.1秒,short,PC预置
+1,362,Route7_Point6_Rotate,工艺路线7-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,363,Route7_Point6_MaxSpeed,工艺路线7-点6-旋转速度,deg/s,short,PC预置
+1,364,Route7_Point7_PathId,工艺路线7-点7-路径ID,1-1000,short,PC预置
+1,365,Route7_Point7_Delay,工艺路线7-点7-延时,0.1秒,short,PC预置
+1,366,Route7_Point7_Rotate,工艺路线7-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,367,Route7_Point7_MaxSpeed,工艺路线7-点7-旋转速度,deg/s,short,PC预置
+1,368,Route7_Point8_PathId,工艺路线7-点8-路径ID,1-1000,short,PC预置
+1,369,Route7_Point8_Delay,工艺路线7-点8-延时,0.1秒,short,PC预置
+1,370,Route7_Point8_Rotate,工艺路线7-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,371,Route7_Point8_MaxSpeed,工艺路线7-点8-旋转速度,deg/s,short,PC预置
+1,372,Route7_Point9_PathId,工艺路线7-点9-路径ID,1-1000,short,PC预置
+1,373,Route7_Point9_Delay,工艺路线7-点9-延时,0.1秒,short,PC预置
+1,374,Route7_Point9_Rotate,工艺路线7-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,375,Route7_Point9_MaxSpeed,工艺路线7-点9-旋转速度,deg/s,short,PC预置
+1,376,Route7_Point10_PathId,工艺路线7-点10-路径ID,1-1000,short,PC预置
+1,377,Route7_Point10_Delay,工艺路线7-点10-延时,0.1秒,short,PC预置
+1,378,Route7_Point10_Rotate,工艺路线7-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,379,Route7_Point10_MaxSpeed,工艺路线7-点10-旋转速度,deg/s,short,PC预置
+1,380,Route8_Point1_PathId,工艺路线8-点1-路径ID,1-1000,short,PC预置
+1,381,Route8_Point1_Delay,工艺路线8-点1-延时,0.1秒,short,PC预置
+1,382,Route8_Point1_Rotate,工艺路线8-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,383,Route8_Point1_MaxSpeed,工艺路线8-点1-旋转速度,deg/s,short,PC预置
+1,384,Route8_Point2_PathId,工艺路线8-点2-路径ID,1-1000,short,PC预置
+1,385,Route8_Point2_Delay,工艺路线8-点2-延时,0.1秒,short,PC预置
+1,386,Route8_Point2_Rotate,工艺路线8-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,387,Route8_Point2_MaxSpeed,工艺路线8-点2-旋转速度,deg/s,short,PC预置
+1,388,Route8_Point3_PathId,工艺路线8-点3-路径ID,1-1000,short,PC预置
+1,389,Route8_Point3_Delay,工艺路线8-点3-延时,0.1秒,short,PC预置
+1,390,Route8_Point3_Rotate,工艺路线8-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,391,Route8_Point3_MaxSpeed,工艺路线8-点3-旋转速度,deg/s,short,PC预置
+1,392,Route8_Point4_PathId,工艺路线8-点4-路径ID,1-1000,short,PC预置
+1,393,Route8_Point4_Delay,工艺路线8-点4-延时,0.1秒,short,PC预置
+1,394,Route8_Point4_Rotate,工艺路线8-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,395,Route8_Point4_MaxSpeed,工艺路线8-点4-旋转速度,deg/s,short,PC预置
+1,396,Route8_Point5_PathId,工艺路线8-点5-路径ID,1-1000,short,PC预置
+1,397,Route8_Point5_Delay,工艺路线8-点5-延时,0.1秒,short,PC预置
+1,398,Route8_Point5_Rotate,工艺路线8-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,399,Route8_Point5_MaxSpeed,工艺路线8-点5-旋转速度,deg/s,short,PC预置
+1,400,Route8_Point6_PathId,工艺路线8-点6-路径ID,1-1000,short,PC预置
+1,401,Route8_Point6_Delay,工艺路线8-点6-延时,0.1秒,short,PC预置
+1,402,Route8_Point6_Rotate,工艺路线8-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,403,Route8_Point6_MaxSpeed,工艺路线8-点6-旋转速度,deg/s,short,PC预置
+1,404,Route8_Point7_PathId,工艺路线8-点7-路径ID,1-1000,short,PC预置
+1,405,Route8_Point7_Delay,工艺路线8-点7-延时,0.1秒,short,PC预置
+1,406,Route8_Point7_Rotate,工艺路线8-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,407,Route8_Point7_MaxSpeed,工艺路线8-点7-旋转速度,deg/s,short,PC预置
+1,408,Route8_Point8_PathId,工艺路线8-点8-路径ID,1-1000,short,PC预置
+1,409,Route8_Point8_Delay,工艺路线8-点8-延时,0.1秒,short,PC预置
+1,410,Route8_Point8_Rotate,工艺路线8-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,411,Route8_Point8_MaxSpeed,工艺路线8-点8-旋转速度,deg/s,short,PC预置
+1,412,Route8_Point9_PathId,工艺路线8-点9-路径ID,1-1000,short,PC预置
+1,413,Route8_Point9_Delay,工艺路线8-点9-延时,0.1秒,short,PC预置
+1,414,Route8_Point9_Rotate,工艺路线8-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,415,Route8_Point9_MaxSpeed,工艺路线8-点9-旋转速度,deg/s,short,PC预置
+1,416,Route8_Point10_PathId,工艺路线8-点10-路径ID,1-1000,short,PC预置
+1,417,Route8_Point10_Delay,工艺路线8-点10-延时,0.1秒,short,PC预置
+1,418,Route8_Point10_Rotate,工艺路线8-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,419,Route8_Point10_MaxSpeed,工艺路线8-点10-旋转速度,deg/s,short,PC预置
+1,420,Route9_Point1_PathId,工艺路线9-点1-路径ID,1-1000,short,PC预置
+1,421,Route9_Point1_Delay,工艺路线9-点1-延时,0.1秒,short,PC预置
+1,422,Route9_Point1_Rotate,工艺路线9-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,423,Route9_Point1_MaxSpeed,工艺路线9-点1-旋转速度,deg/s,short,PC预置
+1,424,Route9_Point2_PathId,工艺路线9-点2-路径ID,1-1000,short,PC预置
+1,425,Route9_Point2_Delay,工艺路线9-点2-延时,0.1秒,short,PC预置
+1,426,Route9_Point2_Rotate,工艺路线9-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,427,Route9_Point2_MaxSpeed,工艺路线9-点2-旋转速度,deg/s,short,PC预置
+1,428,Route9_Point3_PathId,工艺路线9-点3-路径ID,1-1000,short,PC预置
+1,429,Route9_Point3_Delay,工艺路线9-点3-延时,0.1秒,short,PC预置
+1,430,Route9_Point3_Rotate,工艺路线9-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,431,Route9_Point3_MaxSpeed,工艺路线9-点3-旋转速度,deg/s,short,PC预置
+1,432,Route9_Point4_PathId,工艺路线9-点4-路径ID,1-1000,short,PC预置
+1,433,Route9_Point4_Delay,工艺路线9-点4-延时,0.1秒,short,PC预置
+1,434,Route9_Point4_Rotate,工艺路线9-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,435,Route9_Point4_MaxSpeed,工艺路线9-点4-旋转速度,deg/s,short,PC预置
+1,436,Route9_Point5_PathId,工艺路线9-点5-路径ID,1-1000,short,PC预置
+1,437,Route9_Point5_Delay,工艺路线9-点5-延时,0.1秒,short,PC预置
+1,438,Route9_Point5_Rotate,工艺路线9-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,439,Route9_Point5_MaxSpeed,工艺路线9-点5-旋转速度,deg/s,short,PC预置
+1,440,Route9_Point6_PathId,工艺路线9-点6-路径ID,1-1000,short,PC预置
+1,441,Route9_Point6_Delay,工艺路线9-点6-延时,0.1秒,short,PC预置
+1,442,Route9_Point6_Rotate,工艺路线9-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,443,Route9_Point6_MaxSpeed,工艺路线9-点6-旋转速度,deg/s,short,PC预置
+1,444,Route9_Point7_PathId,工艺路线9-点7-路径ID,1-1000,short,PC预置
+1,445,Route9_Point7_Delay,工艺路线9-点7-延时,0.1秒,short,PC预置
+1,446,Route9_Point7_Rotate,工艺路线9-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,447,Route9_Point7_MaxSpeed,工艺路线9-点7-旋转速度,deg/s,short,PC预置
+1,448,Route9_Point8_PathId,工艺路线9-点8-路径ID,1-1000,short,PC预置
+1,449,Route9_Point8_Delay,工艺路线9-点8-延时,0.1秒,short,PC预置
+1,450,Route9_Point8_Rotate,工艺路线9-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,451,Route9_Point8_MaxSpeed,工艺路线9-点8-旋转速度,deg/s,short,PC预置
+1,452,Route9_Point9_PathId,工艺路线9-点9-路径ID,1-1000,short,PC预置
+1,453,Route9_Point9_Delay,工艺路线9-点9-延时,0.1秒,short,PC预置
+1,454,Route9_Point9_Rotate,工艺路线9-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,455,Route9_Point9_MaxSpeed,工艺路线9-点9-旋转速度,deg/s,short,PC预置
+1,456,Route9_Point10_PathId,工艺路线9-点10-路径ID,1-1000,short,PC预置
+1,457,Route9_Point10_Delay,工艺路线9-点10-延时,0.1秒,short,PC预置
+1,458,Route9_Point10_Rotate,工艺路线9-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,459,Route9_Point10_MaxSpeed,工艺路线9-点10-旋转速度,deg/s,short,PC预置
+1,460,Route10_Point1_PathId,工艺路线10-点1-路径ID,1-1000,short,PC预置
+1,461,Route10_Point1_Delay,工艺路线10-点1-延时,0.1秒,short,PC预置
+1,462,Route10_Point1_Rotate,工艺路线10-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,463,Route10_Point1_MaxSpeed,工艺路线10-点1-旋转速度,deg/s,short,PC预置
+1,464,Route10_Point2_PathId,工艺路线10-点2-路径ID,1-1000,short,PC预置
+1,465,Route10_Point2_Delay,工艺路线10-点2-延时,0.1秒,short,PC预置
+1,466,Route10_Point2_Rotate,工艺路线10-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,467,Route10_Point2_MaxSpeed,工艺路线10-点2-旋转速度,deg/s,short,PC预置
+1,468,Route10_Point3_PathId,工艺路线10-点3-路径ID,1-1000,short,PC预置
+1,469,Route10_Point3_Delay,工艺路线10-点3-延时,0.1秒,short,PC预置
+1,470,Route10_Point3_Rotate,工艺路线10-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,471,Route10_Point3_MaxSpeed,工艺路线10-点3-旋转速度,deg/s,short,PC预置
+1,472,Route10_Point4_PathId,工艺路线10-点4-路径ID,1-1000,short,PC预置
+1,473,Route10_Point4_Delay,工艺路线10-点4-延时,0.1秒,short,PC预置
+1,474,Route10_Point4_Rotate,工艺路线10-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,475,Route10_Point4_MaxSpeed,工艺路线10-点4-旋转速度,deg/s,short,PC预置
+1,476,Route10_Point5_PathId,工艺路线10-点5-路径ID,1-1000,short,PC预置
+1,477,Route10_Point5_Delay,工艺路线10-点5-延时,0.1秒,short,PC预置
+1,478,Route10_Point5_Rotate,工艺路线10-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,479,Route10_Point5_MaxSpeed,工艺路线10-点5-旋转速度,deg/s,short,PC预置
+1,480,Route10_Point6_PathId,工艺路线10-点6-路径ID,1-1000,short,PC预置
+1,481,Route10_Point6_Delay,工艺路线10-点6-延时,0.1秒,short,PC预置
+1,482,Route10_Point6_Rotate,工艺路线10-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,483,Route10_Point6_MaxSpeed,工艺路线10-点6-旋转速度,deg/s,short,PC预置
+1,484,Route10_Point7_PathId,工艺路线10-点7-路径ID,1-1000,short,PC预置
+1,485,Route10_Point7_Delay,工艺路线10-点7-延时,0.1秒,short,PC预置
+1,486,Route10_Point7_Rotate,工艺路线10-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,487,Route10_Point7_MaxSpeed,工艺路线10-点7-旋转速度,deg/s,short,PC预置
+1,488,Route10_Point8_PathId,工艺路线10-点8-路径ID,1-1000,short,PC预置
+1,489,Route10_Point8_Delay,工艺路线10-点8-延时,0.1秒,short,PC预置
+1,490,Route10_Point8_Rotate,工艺路线10-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,491,Route10_Point8_MaxSpeed,工艺路线10-点8-旋转速度,deg/s,short,PC预置
+1,492,Route10_Point9_PathId,工艺路线10-点9-路径ID,1-1000,short,PC预置
+1,493,Route10_Point9_Delay,工艺路线10-点9-延时,0.1秒,short,PC预置
+1,494,Route10_Point9_Rotate,工艺路线10-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,495,Route10_Point9_MaxSpeed,工艺路线10-点9-旋转速度,deg/s,short,PC预置
+1,496,Route10_Point10_PathId,工艺路线10-点10-路径ID,1-1000,short,PC预置
+1,497,Route10_Point10_Delay,工艺路线10-点10-延时,0.1秒,short,PC预置
+1,498,Route10_Point10_Rotate,工艺路线10-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+1,499,Route10_Point10_MaxSpeed,工艺路线10-点10-旋转速度,deg/s,short,PC预置
+2,500,X,位置X,0.01m,short,AGV状态上送
+2,501,Y,位置Y,0.01m,short,AGV状态上送
+2,502,Yaw,朝向角,0.1deg,short,AGV状态上送
+2,503,PathPoint,当前路径点索引,,short,AGV状态上送
+2,504,PathSeg,当前路径段索引,,short,AGV状态上送
+2,505,Vx,速度X,mm/s,short,AGV状态上送
+2,506,Vy,速度Y,mm/s,short,AGV状态上送
+2,507,W,角速度,0.001rad/s,short,AGV状态上送
+2,508,Mode,模式,0=手动;1=自动;2=导航,short,AGV状态上送
+2,509,RunState,运行状态,0=停止;1=启动;2=暂停,short,AGV状态上送
+2,510,NaviState,导航状态,0=空闲;1=导航中;2=避障中;3=导航错误,short,AGV状态上送
+2,550,CmdType,全局命令,1=启动;2=停止;3=暂停,ushort,PC下发
+2,551,CmdValue,命令触发标志,1=有效,ushort,PC下发
+2,552,SelectedRoute,当前选中工艺路线,1-10,ushort,PC下发
+2,600,Route1_Point1_PathId,工艺路线1-点1-路径ID,1-1000,short,PC预置
+2,601,Route1_Point1_Delay,工艺路线1-点1-延时,0.1秒,short,PC预置
+2,602,Route1_Point1_Rotate,工艺路线1-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,603,Route1_Point1_MaxSpeed,工艺路线1-点1-旋转速度,deg/s,short,PC预置
+2,604,Route1_Point2_PathId,工艺路线1-点2-路径ID,1-1000,short,PC预置
+2,605,Route1_Point2_Delay,工艺路线1-点2-延时,0.1秒,short,PC预置
+2,606,Route1_Point2_Rotate,工艺路线1-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,607,Route1_Point2_MaxSpeed,工艺路线1-点2-旋转速度,deg/s,short,PC预置
+2,608,Route1_Point3_PathId,工艺路线1-点3-路径ID,1-1000,short,PC预置
+2,609,Route1_Point3_Delay,工艺路线1-点3-延时,0.1秒,short,PC预置
+2,610,Route1_Point3_Rotate,工艺路线1-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,611,Route1_Point3_MaxSpeed,工艺路线1-点3-旋转速度,deg/s,short,PC预置
+2,612,Route1_Point4_PathId,工艺路线1-点4-路径ID,1-1000,short,PC预置
+2,613,Route1_Point4_Delay,工艺路线1-点4-延时,0.1秒,short,PC预置
+2,614,Route1_Point4_Rotate,工艺路线1-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,615,Route1_Point4_MaxSpeed,工艺路线1-点4-旋转速度,deg/s,short,PC预置
+2,616,Route1_Point5_PathId,工艺路线1-点5-路径ID,1-1000,short,PC预置
+2,617,Route1_Point5_Delay,工艺路线1-点5-延时,0.1秒,short,PC预置
+2,618,Route1_Point5_Rotate,工艺路线1-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,619,Route1_Point5_MaxSpeed,工艺路线1-点5-旋转速度,deg/s,short,PC预置
+2,620,Route1_Point6_PathId,工艺路线1-点6-路径ID,1-1000,short,PC预置
+2,621,Route1_Point6_Delay,工艺路线1-点6-延时,0.1秒,short,PC预置
+2,622,Route1_Point6_Rotate,工艺路线1-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,623,Route1_Point6_MaxSpeed,工艺路线1-点6-旋转速度,deg/s,short,PC预置
+2,624,Route1_Point7_PathId,工艺路线1-点7-路径ID,1-1000,short,PC预置
+2,625,Route1_Point7_Delay,工艺路线1-点7-延时,0.1秒,short,PC预置
+2,626,Route1_Point7_Rotate,工艺路线1-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,627,Route1_Point7_MaxSpeed,工艺路线1-点7-旋转速度,deg/s,short,PC预置
+2,628,Route1_Point8_PathId,工艺路线1-点8-路径ID,1-1000,short,PC预置
+2,629,Route1_Point8_Delay,工艺路线1-点8-延时,0.1秒,short,PC预置
+2,630,Route1_Point8_Rotate,工艺路线1-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,631,Route1_Point8_MaxSpeed,工艺路线1-点8-旋转速度,deg/s,short,PC预置
+2,632,Route1_Point9_PathId,工艺路线1-点9-路径ID,1-1000,short,PC预置
+2,633,Route1_Point9_Delay,工艺路线1-点9-延时,0.1秒,short,PC预置
+2,634,Route1_Point9_Rotate,工艺路线1-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,635,Route1_Point9_MaxSpeed,工艺路线1-点9-旋转速度,deg/s,short,PC预置
+2,636,Route1_Point10_PathId,工艺路线1-点10-路径ID,1-1000,short,PC预置
+2,637,Route1_Point10_Delay,工艺路线1-点10-延时,0.1秒,short,PC预置
+2,638,Route1_Point10_Rotate,工艺路线1-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,639,Route1_Point10_MaxSpeed,工艺路线1-点10-旋转速度,deg/s,short,PC预置
+2,640,Route2_Point1_PathId,工艺路线2-点1-路径ID,1-1000,short,PC预置
+2,641,Route2_Point1_Delay,工艺路线2-点1-延时,0.1秒,short,PC预置
+2,642,Route2_Point1_Rotate,工艺路线2-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,643,Route2_Point1_MaxSpeed,工艺路线2-点1-旋转速度,deg/s,short,PC预置
+2,644,Route2_Point2_PathId,工艺路线2-点2-路径ID,1-1000,short,PC预置
+2,645,Route2_Point2_Delay,工艺路线2-点2-延时,0.1秒,short,PC预置
+2,646,Route2_Point2_Rotate,工艺路线2-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,647,Route2_Point2_MaxSpeed,工艺路线2-点2-旋转速度,deg/s,short,PC预置
+2,648,Route2_Point3_PathId,工艺路线2-点3-路径ID,1-1000,short,PC预置
+2,649,Route2_Point3_Delay,工艺路线2-点3-延时,0.1秒,short,PC预置
+2,650,Route2_Point3_Rotate,工艺路线2-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,651,Route2_Point3_MaxSpeed,工艺路线2-点3-旋转速度,deg/s,short,PC预置
+2,652,Route2_Point4_PathId,工艺路线2-点4-路径ID,1-1000,short,PC预置
+2,653,Route2_Point4_Delay,工艺路线2-点4-延时,0.1秒,short,PC预置
+2,654,Route2_Point4_Rotate,工艺路线2-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,655,Route2_Point4_MaxSpeed,工艺路线2-点4-旋转速度,deg/s,short,PC预置
+2,656,Route2_Point5_PathId,工艺路线2-点5-路径ID,1-1000,short,PC预置
+2,657,Route2_Point5_Delay,工艺路线2-点5-延时,0.1秒,short,PC预置
+2,658,Route2_Point5_Rotate,工艺路线2-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,659,Route2_Point5_MaxSpeed,工艺路线2-点5-旋转速度,deg/s,short,PC预置
+2,660,Route2_Point6_PathId,工艺路线2-点6-路径ID,1-1000,short,PC预置
+2,661,Route2_Point6_Delay,工艺路线2-点6-延时,0.1秒,short,PC预置
+2,662,Route2_Point6_Rotate,工艺路线2-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,663,Route2_Point6_MaxSpeed,工艺路线2-点6-旋转速度,deg/s,short,PC预置
+2,664,Route2_Point7_PathId,工艺路线2-点7-路径ID,1-1000,short,PC预置
+2,665,Route2_Point7_Delay,工艺路线2-点7-延时,0.1秒,short,PC预置
+2,666,Route2_Point7_Rotate,工艺路线2-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,667,Route2_Point7_MaxSpeed,工艺路线2-点7-旋转速度,deg/s,short,PC预置
+2,668,Route2_Point8_PathId,工艺路线2-点8-路径ID,1-1000,short,PC预置
+2,669,Route2_Point8_Delay,工艺路线2-点8-延时,0.1秒,short,PC预置
+2,670,Route2_Point8_Rotate,工艺路线2-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,671,Route2_Point8_MaxSpeed,工艺路线2-点8-旋转速度,deg/s,short,PC预置
+2,672,Route2_Point9_PathId,工艺路线2-点9-路径ID,1-1000,short,PC预置
+2,673,Route2_Point9_Delay,工艺路线2-点9-延时,0.1秒,short,PC预置
+2,674,Route2_Point9_Rotate,工艺路线2-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,675,Route2_Point9_MaxSpeed,工艺路线2-点9-旋转速度,deg/s,short,PC预置
+2,676,Route2_Point10_PathId,工艺路线2-点10-路径ID,1-1000,short,PC预置
+2,677,Route2_Point10_Delay,工艺路线2-点10-延时,0.1秒,short,PC预置
+2,678,Route2_Point10_Rotate,工艺路线2-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,679,Route2_Point10_MaxSpeed,工艺路线2-点10-旋转速度,deg/s,short,PC预置
+2,680,Route3_Point1_PathId,工艺路线3-点1-路径ID,1-1000,short,PC预置
+2,681,Route3_Point1_Delay,工艺路线3-点1-延时,0.1秒,short,PC预置
+2,682,Route3_Point1_Rotate,工艺路线3-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,683,Route3_Point1_MaxSpeed,工艺路线3-点1-旋转速度,deg/s,short,PC预置
+2,684,Route3_Point2_PathId,工艺路线3-点2-路径ID,1-1000,short,PC预置
+2,685,Route3_Point2_Delay,工艺路线3-点2-延时,0.1秒,short,PC预置
+2,686,Route3_Point2_Rotate,工艺路线3-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,687,Route3_Point2_MaxSpeed,工艺路线3-点2-旋转速度,deg/s,short,PC预置
+2,688,Route3_Point3_PathId,工艺路线3-点3-路径ID,1-1000,short,PC预置
+2,689,Route3_Point3_Delay,工艺路线3-点3-延时,0.1秒,short,PC预置
+2,690,Route3_Point3_Rotate,工艺路线3-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,691,Route3_Point3_MaxSpeed,工艺路线3-点3-旋转速度,deg/s,short,PC预置
+2,692,Route3_Point4_PathId,工艺路线3-点4-路径ID,1-1000,short,PC预置
+2,693,Route3_Point4_Delay,工艺路线3-点4-延时,0.1秒,short,PC预置
+2,694,Route3_Point4_Rotate,工艺路线3-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,695,Route3_Point4_MaxSpeed,工艺路线3-点4-旋转速度,deg/s,short,PC预置
+2,696,Route3_Point5_PathId,工艺路线3-点5-路径ID,1-1000,short,PC预置
+2,697,Route3_Point5_Delay,工艺路线3-点5-延时,0.1秒,short,PC预置
+2,698,Route3_Point5_Rotate,工艺路线3-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,699,Route3_Point5_MaxSpeed,工艺路线3-点5-旋转速度,deg/s,short,PC预置
+2,700,Route3_Point6_PathId,工艺路线3-点6-路径ID,1-1000,short,PC预置
+2,701,Route3_Point6_Delay,工艺路线3-点6-延时,0.1秒,short,PC预置
+2,702,Route3_Point6_Rotate,工艺路线3-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,703,Route3_Point6_MaxSpeed,工艺路线3-点6-旋转速度,deg/s,short,PC预置
+2,704,Route3_Point7_PathId,工艺路线3-点7-路径ID,1-1000,short,PC预置
+2,705,Route3_Point7_Delay,工艺路线3-点7-延时,0.1秒,short,PC预置
+2,706,Route3_Point7_Rotate,工艺路线3-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,707,Route3_Point7_MaxSpeed,工艺路线3-点7-旋转速度,deg/s,short,PC预置
+2,708,Route3_Point8_PathId,工艺路线3-点8-路径ID,1-1000,short,PC预置
+2,709,Route3_Point8_Delay,工艺路线3-点8-延时,0.1秒,short,PC预置
+2,710,Route3_Point8_Rotate,工艺路线3-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,711,Route3_Point8_MaxSpeed,工艺路线3-点8-旋转速度,deg/s,short,PC预置
+2,712,Route3_Point9_PathId,工艺路线3-点9-路径ID,1-1000,short,PC预置
+2,713,Route3_Point9_Delay,工艺路线3-点9-延时,0.1秒,short,PC预置
+2,714,Route3_Point9_Rotate,工艺路线3-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,715,Route3_Point9_MaxSpeed,工艺路线3-点9-旋转速度,deg/s,short,PC预置
+2,716,Route3_Point10_PathId,工艺路线3-点10-路径ID,1-1000,short,PC预置
+2,717,Route3_Point10_Delay,工艺路线3-点10-延时,0.1秒,short,PC预置
+2,718,Route3_Point10_Rotate,工艺路线3-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,719,Route3_Point10_MaxSpeed,工艺路线3-点10-旋转速度,deg/s,short,PC预置
+2,720,Route4_Point1_PathId,工艺路线4-点1-路径ID,1-1000,short,PC预置
+2,721,Route4_Point1_Delay,工艺路线4-点1-延时,0.1秒,short,PC预置
+2,722,Route4_Point1_Rotate,工艺路线4-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,723,Route4_Point1_MaxSpeed,工艺路线4-点1-旋转速度,deg/s,short,PC预置
+2,724,Route4_Point2_PathId,工艺路线4-点2-路径ID,1-1000,short,PC预置
+2,725,Route4_Point2_Delay,工艺路线4-点2-延时,0.1秒,short,PC预置
+2,726,Route4_Point2_Rotate,工艺路线4-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,727,Route4_Point2_MaxSpeed,工艺路线4-点2-旋转速度,deg/s,short,PC预置
+2,728,Route4_Point3_PathId,工艺路线4-点3-路径ID,1-1000,short,PC预置
+2,729,Route4_Point3_Delay,工艺路线4-点3-延时,0.1秒,short,PC预置
+2,730,Route4_Point3_Rotate,工艺路线4-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,731,Route4_Point3_MaxSpeed,工艺路线4-点3-旋转速度,deg/s,short,PC预置
+2,732,Route4_Point4_PathId,工艺路线4-点4-路径ID,1-1000,short,PC预置
+2,733,Route4_Point4_Delay,工艺路线4-点4-延时,0.1秒,short,PC预置
+2,734,Route4_Point4_Rotate,工艺路线4-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,735,Route4_Point4_MaxSpeed,工艺路线4-点4-旋转速度,deg/s,short,PC预置
+2,736,Route4_Point5_PathId,工艺路线4-点5-路径ID,1-1000,short,PC预置
+2,737,Route4_Point5_Delay,工艺路线4-点5-延时,0.1秒,short,PC预置
+2,738,Route4_Point5_Rotate,工艺路线4-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,739,Route4_Point5_MaxSpeed,工艺路线4-点5-旋转速度,deg/s,short,PC预置
+2,740,Route4_Point6_PathId,工艺路线4-点6-路径ID,1-1000,short,PC预置
+2,741,Route4_Point6_Delay,工艺路线4-点6-延时,0.1秒,short,PC预置
+2,742,Route4_Point6_Rotate,工艺路线4-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,743,Route4_Point6_MaxSpeed,工艺路线4-点6-旋转速度,deg/s,short,PC预置
+2,744,Route4_Point7_PathId,工艺路线4-点7-路径ID,1-1000,short,PC预置
+2,745,Route4_Point7_Delay,工艺路线4-点7-延时,0.1秒,short,PC预置
+2,746,Route4_Point7_Rotate,工艺路线4-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,747,Route4_Point7_MaxSpeed,工艺路线4-点7-旋转速度,deg/s,short,PC预置
+2,748,Route4_Point8_PathId,工艺路线4-点8-路径ID,1-1000,short,PC预置
+2,749,Route4_Point8_Delay,工艺路线4-点8-延时,0.1秒,short,PC预置
+2,750,Route4_Point8_Rotate,工艺路线4-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,751,Route4_Point8_MaxSpeed,工艺路线4-点8-旋转速度,deg/s,short,PC预置
+2,752,Route4_Point9_PathId,工艺路线4-点9-路径ID,1-1000,short,PC预置
+2,753,Route4_Point9_Delay,工艺路线4-点9-延时,0.1秒,short,PC预置
+2,754,Route4_Point9_Rotate,工艺路线4-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,755,Route4_Point9_MaxSpeed,工艺路线4-点9-旋转速度,deg/s,short,PC预置
+2,756,Route4_Point10_PathId,工艺路线4-点10-路径ID,1-1000,short,PC预置
+2,757,Route4_Point10_Delay,工艺路线4-点10-延时,0.1秒,short,PC预置
+2,758,Route4_Point10_Rotate,工艺路线4-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,759,Route4_Point10_MaxSpeed,工艺路线4-点10-旋转速度,deg/s,short,PC预置
+2,760,Route5_Point1_PathId,工艺路线5-点1-路径ID,1-1000,short,PC预置
+2,761,Route5_Point1_Delay,工艺路线5-点1-延时,0.1秒,short,PC预置
+2,762,Route5_Point1_Rotate,工艺路线5-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,763,Route5_Point1_MaxSpeed,工艺路线5-点1-旋转速度,deg/s,short,PC预置
+2,764,Route5_Point2_PathId,工艺路线5-点2-路径ID,1-1000,short,PC预置
+2,765,Route5_Point2_Delay,工艺路线5-点2-延时,0.1秒,short,PC预置
+2,766,Route5_Point2_Rotate,工艺路线5-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,767,Route5_Point2_MaxSpeed,工艺路线5-点2-旋转速度,deg/s,short,PC预置
+2,768,Route5_Point3_PathId,工艺路线5-点3-路径ID,1-1000,short,PC预置
+2,769,Route5_Point3_Delay,工艺路线5-点3-延时,0.1秒,short,PC预置
+2,770,Route5_Point3_Rotate,工艺路线5-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,771,Route5_Point3_MaxSpeed,工艺路线5-点3-旋转速度,deg/s,short,PC预置
+2,772,Route5_Point4_PathId,工艺路线5-点4-路径ID,1-1000,short,PC预置
+2,773,Route5_Point4_Delay,工艺路线5-点4-延时,0.1秒,short,PC预置
+2,774,Route5_Point4_Rotate,工艺路线5-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,775,Route5_Point4_MaxSpeed,工艺路线5-点4-旋转速度,deg/s,short,PC预置
+2,776,Route5_Point5_PathId,工艺路线5-点5-路径ID,1-1000,short,PC预置
+2,777,Route5_Point5_Delay,工艺路线5-点5-延时,0.1秒,short,PC预置
+2,778,Route5_Point5_Rotate,工艺路线5-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,779,Route5_Point5_MaxSpeed,工艺路线5-点5-旋转速度,deg/s,short,PC预置
+2,780,Route5_Point6_PathId,工艺路线5-点6-路径ID,1-1000,short,PC预置
+2,781,Route5_Point6_Delay,工艺路线5-点6-延时,0.1秒,short,PC预置
+2,782,Route5_Point6_Rotate,工艺路线5-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,783,Route5_Point6_MaxSpeed,工艺路线5-点6-旋转速度,deg/s,short,PC预置
+2,784,Route5_Point7_PathId,工艺路线5-点7-路径ID,1-1000,short,PC预置
+2,785,Route5_Point7_Delay,工艺路线5-点7-延时,0.1秒,short,PC预置
+2,786,Route5_Point7_Rotate,工艺路线5-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,787,Route5_Point7_MaxSpeed,工艺路线5-点7-旋转速度,deg/s,short,PC预置
+2,788,Route5_Point8_PathId,工艺路线5-点8-路径ID,1-1000,short,PC预置
+2,789,Route5_Point8_Delay,工艺路线5-点8-延时,0.1秒,short,PC预置
+2,790,Route5_Point8_Rotate,工艺路线5-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,791,Route5_Point8_MaxSpeed,工艺路线5-点8-旋转速度,deg/s,short,PC预置
+2,792,Route5_Point9_PathId,工艺路线5-点9-路径ID,1-1000,short,PC预置
+2,793,Route5_Point9_Delay,工艺路线5-点9-延时,0.1秒,short,PC预置
+2,794,Route5_Point9_Rotate,工艺路线5-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,795,Route5_Point9_MaxSpeed,工艺路线5-点9-旋转速度,deg/s,short,PC预置
+2,796,Route5_Point10_PathId,工艺路线5-点10-路径ID,1-1000,short,PC预置
+2,797,Route5_Point10_Delay,工艺路线5-点10-延时,0.1秒,short,PC预置
+2,798,Route5_Point10_Rotate,工艺路线5-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,799,Route5_Point10_MaxSpeed,工艺路线5-点10-旋转速度,deg/s,short,PC预置
+2,800,Route6_Point1_PathId,工艺路线6-点1-路径ID,1-1000,short,PC预置
+2,801,Route6_Point1_Delay,工艺路线6-点1-延时,0.1秒,short,PC预置
+2,802,Route6_Point1_Rotate,工艺路线6-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,803,Route6_Point1_MaxSpeed,工艺路线6-点1-旋转速度,deg/s,short,PC预置
+2,804,Route6_Point2_PathId,工艺路线6-点2-路径ID,1-1000,short,PC预置
+2,805,Route6_Point2_Delay,工艺路线6-点2-延时,0.1秒,short,PC预置
+2,806,Route6_Point2_Rotate,工艺路线6-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,807,Route6_Point2_MaxSpeed,工艺路线6-点2-旋转速度,deg/s,short,PC预置
+2,808,Route6_Point3_PathId,工艺路线6-点3-路径ID,1-1000,short,PC预置
+2,809,Route6_Point3_Delay,工艺路线6-点3-延时,0.1秒,short,PC预置
+2,810,Route6_Point3_Rotate,工艺路线6-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,811,Route6_Point3_MaxSpeed,工艺路线6-点3-旋转速度,deg/s,short,PC预置
+2,812,Route6_Point4_PathId,工艺路线6-点4-路径ID,1-1000,short,PC预置
+2,813,Route6_Point4_Delay,工艺路线6-点4-延时,0.1秒,short,PC预置
+2,814,Route6_Point4_Rotate,工艺路线6-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,815,Route6_Point4_MaxSpeed,工艺路线6-点4-旋转速度,deg/s,short,PC预置
+2,816,Route6_Point5_PathId,工艺路线6-点5-路径ID,1-1000,short,PC预置
+2,817,Route6_Point5_Delay,工艺路线6-点5-延时,0.1秒,short,PC预置
+2,818,Route6_Point5_Rotate,工艺路线6-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,819,Route6_Point5_MaxSpeed,工艺路线6-点5-旋转速度,deg/s,short,PC预置
+2,820,Route6_Point6_PathId,工艺路线6-点6-路径ID,1-1000,short,PC预置
+2,821,Route6_Point6_Delay,工艺路线6-点6-延时,0.1秒,short,PC预置
+2,822,Route6_Point6_Rotate,工艺路线6-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,823,Route6_Point6_MaxSpeed,工艺路线6-点6-旋转速度,deg/s,short,PC预置
+2,824,Route6_Point7_PathId,工艺路线6-点7-路径ID,1-1000,short,PC预置
+2,825,Route6_Point7_Delay,工艺路线6-点7-延时,0.1秒,short,PC预置
+2,826,Route6_Point7_Rotate,工艺路线6-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,827,Route6_Point7_MaxSpeed,工艺路线6-点7-旋转速度,deg/s,short,PC预置
+2,828,Route6_Point8_PathId,工艺路线6-点8-路径ID,1-1000,short,PC预置
+2,829,Route6_Point8_Delay,工艺路线6-点8-延时,0.1秒,short,PC预置
+2,830,Route6_Point8_Rotate,工艺路线6-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,831,Route6_Point8_MaxSpeed,工艺路线6-点8-旋转速度,deg/s,short,PC预置
+2,832,Route6_Point9_PathId,工艺路线6-点9-路径ID,1-1000,short,PC预置
+2,833,Route6_Point9_Delay,工艺路线6-点9-延时,0.1秒,short,PC预置
+2,834,Route6_Point9_Rotate,工艺路线6-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,835,Route6_Point9_MaxSpeed,工艺路线6-点9-旋转速度,deg/s,short,PC预置
+2,836,Route6_Point10_PathId,工艺路线6-点10-路径ID,1-1000,short,PC预置
+2,837,Route6_Point10_Delay,工艺路线6-点10-延时,0.1秒,short,PC预置
+2,838,Route6_Point10_Rotate,工艺路线6-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,839,Route6_Point10_MaxSpeed,工艺路线6-点10-旋转速度,deg/s,short,PC预置
+2,840,Route7_Point1_PathId,工艺路线7-点1-路径ID,1-1000,short,PC预置
+2,841,Route7_Point1_Delay,工艺路线7-点1-延时,0.1秒,short,PC预置
+2,842,Route7_Point1_Rotate,工艺路线7-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,843,Route7_Point1_MaxSpeed,工艺路线7-点1-旋转速度,deg/s,short,PC预置
+2,844,Route7_Point2_PathId,工艺路线7-点2-路径ID,1-1000,short,PC预置
+2,845,Route7_Point2_Delay,工艺路线7-点2-延时,0.1秒,short,PC预置
+2,846,Route7_Point2_Rotate,工艺路线7-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,847,Route7_Point2_MaxSpeed,工艺路线7-点2-旋转速度,deg/s,short,PC预置
+2,848,Route7_Point3_PathId,工艺路线7-点3-路径ID,1-1000,short,PC预置
+2,849,Route7_Point3_Delay,工艺路线7-点3-延时,0.1秒,short,PC预置
+2,850,Route7_Point3_Rotate,工艺路线7-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,851,Route7_Point3_MaxSpeed,工艺路线7-点3-旋转速度,deg/s,short,PC预置
+2,852,Route7_Point4_PathId,工艺路线7-点4-路径ID,1-1000,short,PC预置
+2,853,Route7_Point4_Delay,工艺路线7-点4-延时,0.1秒,short,PC预置
+2,854,Route7_Point4_Rotate,工艺路线7-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,855,Route7_Point4_MaxSpeed,工艺路线7-点4-旋转速度,deg/s,short,PC预置
+2,856,Route7_Point5_PathId,工艺路线7-点5-路径ID,1-1000,short,PC预置
+2,857,Route7_Point5_Delay,工艺路线7-点5-延时,0.1秒,short,PC预置
+2,858,Route7_Point5_Rotate,工艺路线7-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,859,Route7_Point5_MaxSpeed,工艺路线7-点5-旋转速度,deg/s,short,PC预置
+2,860,Route7_Point6_PathId,工艺路线7-点6-路径ID,1-1000,short,PC预置
+2,861,Route7_Point6_Delay,工艺路线7-点6-延时,0.1秒,short,PC预置
+2,862,Route7_Point6_Rotate,工艺路线7-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,863,Route7_Point6_MaxSpeed,工艺路线7-点6-旋转速度,deg/s,short,PC预置
+2,864,Route7_Point7_PathId,工艺路线7-点7-路径ID,1-1000,short,PC预置
+2,865,Route7_Point7_Delay,工艺路线7-点7-延时,0.1秒,short,PC预置
+2,866,Route7_Point7_Rotate,工艺路线7-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,867,Route7_Point7_MaxSpeed,工艺路线7-点7-旋转速度,deg/s,short,PC预置
+2,868,Route7_Point8_PathId,工艺路线7-点8-路径ID,1-1000,short,PC预置
+2,869,Route7_Point8_Delay,工艺路线7-点8-延时,0.1秒,short,PC预置
+2,870,Route7_Point8_Rotate,工艺路线7-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,871,Route7_Point8_MaxSpeed,工艺路线7-点8-旋转速度,deg/s,short,PC预置
+2,872,Route7_Point9_PathId,工艺路线7-点9-路径ID,1-1000,short,PC预置
+2,873,Route7_Point9_Delay,工艺路线7-点9-延时,0.1秒,short,PC预置
+2,874,Route7_Point9_Rotate,工艺路线7-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,875,Route7_Point9_MaxSpeed,工艺路线7-点9-旋转速度,deg/s,short,PC预置
+2,876,Route7_Point10_PathId,工艺路线7-点10-路径ID,1-1000,short,PC预置
+2,877,Route7_Point10_Delay,工艺路线7-点10-延时,0.1秒,short,PC预置
+2,878,Route7_Point10_Rotate,工艺路线7-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,879,Route7_Point10_MaxSpeed,工艺路线7-点10-旋转速度,deg/s,short,PC预置
+2,880,Route8_Point1_PathId,工艺路线8-点1-路径ID,1-1000,short,PC预置
+2,881,Route8_Point1_Delay,工艺路线8-点1-延时,0.1秒,short,PC预置
+2,882,Route8_Point1_Rotate,工艺路线8-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,883,Route8_Point1_MaxSpeed,工艺路线8-点1-旋转速度,deg/s,short,PC预置
+2,884,Route8_Point2_PathId,工艺路线8-点2-路径ID,1-1000,short,PC预置
+2,885,Route8_Point2_Delay,工艺路线8-点2-延时,0.1秒,short,PC预置
+2,886,Route8_Point2_Rotate,工艺路线8-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,887,Route8_Point2_MaxSpeed,工艺路线8-点2-旋转速度,deg/s,short,PC预置
+2,888,Route8_Point3_PathId,工艺路线8-点3-路径ID,1-1000,short,PC预置
+2,889,Route8_Point3_Delay,工艺路线8-点3-延时,0.1秒,short,PC预置
+2,890,Route8_Point3_Rotate,工艺路线8-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,891,Route8_Point3_MaxSpeed,工艺路线8-点3-旋转速度,deg/s,short,PC预置
+2,892,Route8_Point4_PathId,工艺路线8-点4-路径ID,1-1000,short,PC预置
+2,893,Route8_Point4_Delay,工艺路线8-点4-延时,0.1秒,short,PC预置
+2,894,Route8_Point4_Rotate,工艺路线8-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,895,Route8_Point4_MaxSpeed,工艺路线8-点4-旋转速度,deg/s,short,PC预置
+2,896,Route8_Point5_PathId,工艺路线8-点5-路径ID,1-1000,short,PC预置
+2,897,Route8_Point5_Delay,工艺路线8-点5-延时,0.1秒,short,PC预置
+2,898,Route8_Point5_Rotate,工艺路线8-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,899,Route8_Point5_MaxSpeed,工艺路线8-点5-旋转速度,deg/s,short,PC预置
+2,900,Route8_Point6_PathId,工艺路线8-点6-路径ID,1-1000,short,PC预置
+2,901,Route8_Point6_Delay,工艺路线8-点6-延时,0.1秒,short,PC预置
+2,902,Route8_Point6_Rotate,工艺路线8-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,903,Route8_Point6_MaxSpeed,工艺路线8-点6-旋转速度,deg/s,short,PC预置
+2,904,Route8_Point7_PathId,工艺路线8-点7-路径ID,1-1000,short,PC预置
+2,905,Route8_Point7_Delay,工艺路线8-点7-延时,0.1秒,short,PC预置
+2,906,Route8_Point7_Rotate,工艺路线8-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,907,Route8_Point7_MaxSpeed,工艺路线8-点7-旋转速度,deg/s,short,PC预置
+2,908,Route8_Point8_PathId,工艺路线8-点8-路径ID,1-1000,short,PC预置
+2,909,Route8_Point8_Delay,工艺路线8-点8-延时,0.1秒,short,PC预置
+2,910,Route8_Point8_Rotate,工艺路线8-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,911,Route8_Point8_MaxSpeed,工艺路线8-点8-旋转速度,deg/s,short,PC预置
+2,912,Route8_Point9_PathId,工艺路线8-点9-路径ID,1-1000,short,PC预置
+2,913,Route8_Point9_Delay,工艺路线8-点9-延时,0.1秒,short,PC预置
+2,914,Route8_Point9_Rotate,工艺路线8-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,915,Route8_Point9_MaxSpeed,工艺路线8-点9-旋转速度,deg/s,short,PC预置
+2,916,Route8_Point10_PathId,工艺路线8-点10-路径ID,1-1000,short,PC预置
+2,917,Route8_Point10_Delay,工艺路线8-点10-延时,0.1秒,short,PC预置
+2,918,Route8_Point10_Rotate,工艺路线8-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,919,Route8_Point10_MaxSpeed,工艺路线8-点10-旋转速度,deg/s,short,PC预置
+2,920,Route9_Point1_PathId,工艺路线9-点1-路径ID,1-1000,short,PC预置
+2,921,Route9_Point1_Delay,工艺路线9-点1-延时,0.1秒,short,PC预置
+2,922,Route9_Point1_Rotate,工艺路线9-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,923,Route9_Point1_MaxSpeed,工艺路线9-点1-旋转速度,deg/s,short,PC预置
+2,924,Route9_Point2_PathId,工艺路线9-点2-路径ID,1-1000,short,PC预置
+2,925,Route9_Point2_Delay,工艺路线9-点2-延时,0.1秒,short,PC预置
+2,926,Route9_Point2_Rotate,工艺路线9-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,927,Route9_Point2_MaxSpeed,工艺路线9-点2-旋转速度,deg/s,short,PC预置
+2,928,Route9_Point3_PathId,工艺路线9-点3-路径ID,1-1000,short,PC预置
+2,929,Route9_Point3_Delay,工艺路线9-点3-延时,0.1秒,short,PC预置
+2,930,Route9_Point3_Rotate,工艺路线9-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,931,Route9_Point3_MaxSpeed,工艺路线9-点3-旋转速度,deg/s,short,PC预置
+2,932,Route9_Point4_PathId,工艺路线9-点4-路径ID,1-1000,short,PC预置
+2,933,Route9_Point4_Delay,工艺路线9-点4-延时,0.1秒,short,PC预置
+2,934,Route9_Point4_Rotate,工艺路线9-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,935,Route9_Point4_MaxSpeed,工艺路线9-点4-旋转速度,deg/s,short,PC预置
+2,936,Route9_Point5_PathId,工艺路线9-点5-路径ID,1-1000,short,PC预置
+2,937,Route9_Point5_Delay,工艺路线9-点5-延时,0.1秒,short,PC预置
+2,938,Route9_Point5_Rotate,工艺路线9-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,939,Route9_Point5_MaxSpeed,工艺路线9-点5-旋转速度,deg/s,short,PC预置
+2,940,Route9_Point6_PathId,工艺路线9-点6-路径ID,1-1000,short,PC预置
+2,941,Route9_Point6_Delay,工艺路线9-点6-延时,0.1秒,short,PC预置
+2,942,Route9_Point6_Rotate,工艺路线9-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,943,Route9_Point6_MaxSpeed,工艺路线9-点6-旋转速度,deg/s,short,PC预置
+2,944,Route9_Point7_PathId,工艺路线9-点7-路径ID,1-1000,short,PC预置
+2,945,Route9_Point7_Delay,工艺路线9-点7-延时,0.1秒,short,PC预置
+2,946,Route9_Point7_Rotate,工艺路线9-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,947,Route9_Point7_MaxSpeed,工艺路线9-点7-旋转速度,deg/s,short,PC预置
+2,948,Route9_Point8_PathId,工艺路线9-点8-路径ID,1-1000,short,PC预置
+2,949,Route9_Point8_Delay,工艺路线9-点8-延时,0.1秒,short,PC预置
+2,950,Route9_Point8_Rotate,工艺路线9-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,951,Route9_Point8_MaxSpeed,工艺路线9-点8-旋转速度,deg/s,short,PC预置
+2,952,Route9_Point9_PathId,工艺路线9-点9-路径ID,1-1000,short,PC预置
+2,953,Route9_Point9_Delay,工艺路线9-点9-延时,0.1秒,short,PC预置
+2,954,Route9_Point9_Rotate,工艺路线9-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,955,Route9_Point9_MaxSpeed,工艺路线9-点9-旋转速度,deg/s,short,PC预置
+2,956,Route9_Point10_PathId,工艺路线9-点10-路径ID,1-1000,short,PC预置
+2,957,Route9_Point10_Delay,工艺路线9-点10-延时,0.1秒,short,PC预置
+2,958,Route9_Point10_Rotate,工艺路线9-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,959,Route9_Point10_MaxSpeed,工艺路线9-点10-旋转速度,deg/s,short,PC预置
+2,960,Route10_Point1_PathId,工艺路线10-点1-路径ID,1-1000,short,PC预置
+2,961,Route10_Point1_Delay,工艺路线10-点1-延时,0.1秒,short,PC预置
+2,962,Route10_Point1_Rotate,工艺路线10-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,963,Route10_Point1_MaxSpeed,工艺路线10-点1-旋转速度,deg/s,short,PC预置
+2,964,Route10_Point2_PathId,工艺路线10-点2-路径ID,1-1000,short,PC预置
+2,965,Route10_Point2_Delay,工艺路线10-点2-延时,0.1秒,short,PC预置
+2,966,Route10_Point2_Rotate,工艺路线10-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,967,Route10_Point2_MaxSpeed,工艺路线10-点2-旋转速度,deg/s,short,PC预置
+2,968,Route10_Point3_PathId,工艺路线10-点3-路径ID,1-1000,short,PC预置
+2,969,Route10_Point3_Delay,工艺路线10-点3-延时,0.1秒,short,PC预置
+2,970,Route10_Point3_Rotate,工艺路线10-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,971,Route10_Point3_MaxSpeed,工艺路线10-点3-旋转速度,deg/s,short,PC预置
+2,972,Route10_Point4_PathId,工艺路线10-点4-路径ID,1-1000,short,PC预置
+2,973,Route10_Point4_Delay,工艺路线10-点4-延时,0.1秒,short,PC预置
+2,974,Route10_Point4_Rotate,工艺路线10-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,975,Route10_Point4_MaxSpeed,工艺路线10-点4-旋转速度,deg/s,short,PC预置
+2,976,Route10_Point5_PathId,工艺路线10-点5-路径ID,1-1000,short,PC预置
+2,977,Route10_Point5_Delay,工艺路线10-点5-延时,0.1秒,short,PC预置
+2,978,Route10_Point5_Rotate,工艺路线10-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,979,Route10_Point5_MaxSpeed,工艺路线10-点5-旋转速度,deg/s,short,PC预置
+2,980,Route10_Point6_PathId,工艺路线10-点6-路径ID,1-1000,short,PC预置
+2,981,Route10_Point6_Delay,工艺路线10-点6-延时,0.1秒,short,PC预置
+2,982,Route10_Point6_Rotate,工艺路线10-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,983,Route10_Point6_MaxSpeed,工艺路线10-点6-旋转速度,deg/s,short,PC预置
+2,984,Route10_Point7_PathId,工艺路线10-点7-路径ID,1-1000,short,PC预置
+2,985,Route10_Point7_Delay,工艺路线10-点7-延时,0.1秒,short,PC预置
+2,986,Route10_Point7_Rotate,工艺路线10-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,987,Route10_Point7_MaxSpeed,工艺路线10-点7-旋转速度,deg/s,short,PC预置
+2,988,Route10_Point8_PathId,工艺路线10-点8-路径ID,1-1000,short,PC预置
+2,989,Route10_Point8_Delay,工艺路线10-点8-延时,0.1秒,short,PC预置
+2,990,Route10_Point8_Rotate,工艺路线10-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,991,Route10_Point8_MaxSpeed,工艺路线10-点8-旋转速度,deg/s,short,PC预置
+2,992,Route10_Point9_PathId,工艺路线10-点9-路径ID,1-1000,short,PC预置
+2,993,Route10_Point9_Delay,工艺路线10-点9-延时,0.1秒,short,PC预置
+2,994,Route10_Point9_Rotate,工艺路线10-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,995,Route10_Point9_MaxSpeed,工艺路线10-点9-旋转速度,deg/s,short,PC预置
+2,996,Route10_Point10_PathId,工艺路线10-点10-路径ID,1-1000,short,PC预置
+2,997,Route10_Point10_Delay,工艺路线10-点10-延时,0.1秒,short,PC预置
+2,998,Route10_Point10_Rotate,工艺路线10-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+2,999,Route10_Point10_MaxSpeed,工艺路线10-点10-旋转速度,deg/s,short,PC预置
+3,1000,X,位置X,0.01m,short,AGV状态上送
+3,1001,Y,位置Y,0.01m,short,AGV状态上送
+3,1002,Yaw,朝向角,0.1deg,short,AGV状态上送
+3,1003,PathPoint,当前路径点索引,,short,AGV状态上送
+3,1004,PathSeg,当前路径段索引,,short,AGV状态上送
+3,1005,Vx,速度X,mm/s,short,AGV状态上送
+3,1006,Vy,速度Y,mm/s,short,AGV状态上送
+3,1007,W,角速度,0.001rad/s,short,AGV状态上送
+3,1008,Mode,模式,0=手动;1=自动;2=导航,short,AGV状态上送
+3,1009,RunState,运行状态,0=停止;1=启动;2=暂停,short,AGV状态上送
+3,1010,NaviState,导航状态,0=空闲;1=导航中;2=避障中;3=导航错误,short,AGV状态上送
+3,1050,CmdType,全局命令,1=启动;2=停止;3=暂停,ushort,PC下发
+3,1051,CmdValue,命令触发标志,1=有效,ushort,PC下发
+3,1052,SelectedRoute,当前选中工艺路线,1-10,ushort,PC下发
+3,1100,Route1_Point1_PathId,工艺路线1-点1-路径ID,1-1000,short,PC预置
+3,1101,Route1_Point1_Delay,工艺路线1-点1-延时,0.1秒,short,PC预置
+3,1102,Route1_Point1_Rotate,工艺路线1-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1103,Route1_Point1_MaxSpeed,工艺路线1-点1-旋转速度,deg/s,short,PC预置
+3,1104,Route1_Point2_PathId,工艺路线1-点2-路径ID,1-1000,short,PC预置
+3,1105,Route1_Point2_Delay,工艺路线1-点2-延时,0.1秒,short,PC预置
+3,1106,Route1_Point2_Rotate,工艺路线1-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1107,Route1_Point2_MaxSpeed,工艺路线1-点2-旋转速度,deg/s,short,PC预置
+3,1108,Route1_Point3_PathId,工艺路线1-点3-路径ID,1-1000,short,PC预置
+3,1109,Route1_Point3_Delay,工艺路线1-点3-延时,0.1秒,short,PC预置
+3,1110,Route1_Point3_Rotate,工艺路线1-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1111,Route1_Point3_MaxSpeed,工艺路线1-点3-旋转速度,deg/s,short,PC预置
+3,1112,Route1_Point4_PathId,工艺路线1-点4-路径ID,1-1000,short,PC预置
+3,1113,Route1_Point4_Delay,工艺路线1-点4-延时,0.1秒,short,PC预置
+3,1114,Route1_Point4_Rotate,工艺路线1-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1115,Route1_Point4_MaxSpeed,工艺路线1-点4-旋转速度,deg/s,short,PC预置
+3,1116,Route1_Point5_PathId,工艺路线1-点5-路径ID,1-1000,short,PC预置
+3,1117,Route1_Point5_Delay,工艺路线1-点5-延时,0.1秒,short,PC预置
+3,1118,Route1_Point5_Rotate,工艺路线1-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1119,Route1_Point5_MaxSpeed,工艺路线1-点5-旋转速度,deg/s,short,PC预置
+3,1120,Route1_Point6_PathId,工艺路线1-点6-路径ID,1-1000,short,PC预置
+3,1121,Route1_Point6_Delay,工艺路线1-点6-延时,0.1秒,short,PC预置
+3,1122,Route1_Point6_Rotate,工艺路线1-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1123,Route1_Point6_MaxSpeed,工艺路线1-点6-旋转速度,deg/s,short,PC预置
+3,1124,Route1_Point7_PathId,工艺路线1-点7-路径ID,1-1000,short,PC预置
+3,1125,Route1_Point7_Delay,工艺路线1-点7-延时,0.1秒,short,PC预置
+3,1126,Route1_Point7_Rotate,工艺路线1-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1127,Route1_Point7_MaxSpeed,工艺路线1-点7-旋转速度,deg/s,short,PC预置
+3,1128,Route1_Point8_PathId,工艺路线1-点8-路径ID,1-1000,short,PC预置
+3,1129,Route1_Point8_Delay,工艺路线1-点8-延时,0.1秒,short,PC预置
+3,1130,Route1_Point8_Rotate,工艺路线1-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1131,Route1_Point8_MaxSpeed,工艺路线1-点8-旋转速度,deg/s,short,PC预置
+3,1132,Route1_Point9_PathId,工艺路线1-点9-路径ID,1-1000,short,PC预置
+3,1133,Route1_Point9_Delay,工艺路线1-点9-延时,0.1秒,short,PC预置
+3,1134,Route1_Point9_Rotate,工艺路线1-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1135,Route1_Point9_MaxSpeed,工艺路线1-点9-旋转速度,deg/s,short,PC预置
+3,1136,Route1_Point10_PathId,工艺路线1-点10-路径ID,1-1000,short,PC预置
+3,1137,Route1_Point10_Delay,工艺路线1-点10-延时,0.1秒,short,PC预置
+3,1138,Route1_Point10_Rotate,工艺路线1-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1139,Route1_Point10_MaxSpeed,工艺路线1-点10-旋转速度,deg/s,short,PC预置
+3,1140,Route2_Point1_PathId,工艺路线2-点1-路径ID,1-1000,short,PC预置
+3,1141,Route2_Point1_Delay,工艺路线2-点1-延时,0.1秒,short,PC预置
+3,1142,Route2_Point1_Rotate,工艺路线2-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1143,Route2_Point1_MaxSpeed,工艺路线2-点1-旋转速度,deg/s,short,PC预置
+3,1144,Route2_Point2_PathId,工艺路线2-点2-路径ID,1-1000,short,PC预置
+3,1145,Route2_Point2_Delay,工艺路线2-点2-延时,0.1秒,short,PC预置
+3,1146,Route2_Point2_Rotate,工艺路线2-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1147,Route2_Point2_MaxSpeed,工艺路线2-点2-旋转速度,deg/s,short,PC预置
+3,1148,Route2_Point3_PathId,工艺路线2-点3-路径ID,1-1000,short,PC预置
+3,1149,Route2_Point3_Delay,工艺路线2-点3-延时,0.1秒,short,PC预置
+3,1150,Route2_Point3_Rotate,工艺路线2-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1151,Route2_Point3_MaxSpeed,工艺路线2-点3-旋转速度,deg/s,short,PC预置
+3,1152,Route2_Point4_PathId,工艺路线2-点4-路径ID,1-1000,short,PC预置
+3,1153,Route2_Point4_Delay,工艺路线2-点4-延时,0.1秒,short,PC预置
+3,1154,Route2_Point4_Rotate,工艺路线2-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1155,Route2_Point4_MaxSpeed,工艺路线2-点4-旋转速度,deg/s,short,PC预置
+3,1156,Route2_Point5_PathId,工艺路线2-点5-路径ID,1-1000,short,PC预置
+3,1157,Route2_Point5_Delay,工艺路线2-点5-延时,0.1秒,short,PC预置
+3,1158,Route2_Point5_Rotate,工艺路线2-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1159,Route2_Point5_MaxSpeed,工艺路线2-点5-旋转速度,deg/s,short,PC预置
+3,1160,Route2_Point6_PathId,工艺路线2-点6-路径ID,1-1000,short,PC预置
+3,1161,Route2_Point6_Delay,工艺路线2-点6-延时,0.1秒,short,PC预置
+3,1162,Route2_Point6_Rotate,工艺路线2-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1163,Route2_Point6_MaxSpeed,工艺路线2-点6-旋转速度,deg/s,short,PC预置
+3,1164,Route2_Point7_PathId,工艺路线2-点7-路径ID,1-1000,short,PC预置
+3,1165,Route2_Point7_Delay,工艺路线2-点7-延时,0.1秒,short,PC预置
+3,1166,Route2_Point7_Rotate,工艺路线2-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1167,Route2_Point7_MaxSpeed,工艺路线2-点7-旋转速度,deg/s,short,PC预置
+3,1168,Route2_Point8_PathId,工艺路线2-点8-路径ID,1-1000,short,PC预置
+3,1169,Route2_Point8_Delay,工艺路线2-点8-延时,0.1秒,short,PC预置
+3,1170,Route2_Point8_Rotate,工艺路线2-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1171,Route2_Point8_MaxSpeed,工艺路线2-点8-旋转速度,deg/s,short,PC预置
+3,1172,Route2_Point9_PathId,工艺路线2-点9-路径ID,1-1000,short,PC预置
+3,1173,Route2_Point9_Delay,工艺路线2-点9-延时,0.1秒,short,PC预置
+3,1174,Route2_Point9_Rotate,工艺路线2-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1175,Route2_Point9_MaxSpeed,工艺路线2-点9-旋转速度,deg/s,short,PC预置
+3,1176,Route2_Point10_PathId,工艺路线2-点10-路径ID,1-1000,short,PC预置
+3,1177,Route2_Point10_Delay,工艺路线2-点10-延时,0.1秒,short,PC预置
+3,1178,Route2_Point10_Rotate,工艺路线2-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1179,Route2_Point10_MaxSpeed,工艺路线2-点10-旋转速度,deg/s,short,PC预置
+3,1180,Route3_Point1_PathId,工艺路线3-点1-路径ID,1-1000,short,PC预置
+3,1181,Route3_Point1_Delay,工艺路线3-点1-延时,0.1秒,short,PC预置
+3,1182,Route3_Point1_Rotate,工艺路线3-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1183,Route3_Point1_MaxSpeed,工艺路线3-点1-旋转速度,deg/s,short,PC预置
+3,1184,Route3_Point2_PathId,工艺路线3-点2-路径ID,1-1000,short,PC预置
+3,1185,Route3_Point2_Delay,工艺路线3-点2-延时,0.1秒,short,PC预置
+3,1186,Route3_Point2_Rotate,工艺路线3-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1187,Route3_Point2_MaxSpeed,工艺路线3-点2-旋转速度,deg/s,short,PC预置
+3,1188,Route3_Point3_PathId,工艺路线3-点3-路径ID,1-1000,short,PC预置
+3,1189,Route3_Point3_Delay,工艺路线3-点3-延时,0.1秒,short,PC预置
+3,1190,Route3_Point3_Rotate,工艺路线3-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1191,Route3_Point3_MaxSpeed,工艺路线3-点3-旋转速度,deg/s,short,PC预置
+3,1192,Route3_Point4_PathId,工艺路线3-点4-路径ID,1-1000,short,PC预置
+3,1193,Route3_Point4_Delay,工艺路线3-点4-延时,0.1秒,short,PC预置
+3,1194,Route3_Point4_Rotate,工艺路线3-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1195,Route3_Point4_MaxSpeed,工艺路线3-点4-旋转速度,deg/s,short,PC预置
+3,1196,Route3_Point5_PathId,工艺路线3-点5-路径ID,1-1000,short,PC预置
+3,1197,Route3_Point5_Delay,工艺路线3-点5-延时,0.1秒,short,PC预置
+3,1198,Route3_Point5_Rotate,工艺路线3-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1199,Route3_Point5_MaxSpeed,工艺路线3-点5-旋转速度,deg/s,short,PC预置
+3,1200,Route3_Point6_PathId,工艺路线3-点6-路径ID,1-1000,short,PC预置
+3,1201,Route3_Point6_Delay,工艺路线3-点6-延时,0.1秒,short,PC预置
+3,1202,Route3_Point6_Rotate,工艺路线3-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1203,Route3_Point6_MaxSpeed,工艺路线3-点6-旋转速度,deg/s,short,PC预置
+3,1204,Route3_Point7_PathId,工艺路线3-点7-路径ID,1-1000,short,PC预置
+3,1205,Route3_Point7_Delay,工艺路线3-点7-延时,0.1秒,short,PC预置
+3,1206,Route3_Point7_Rotate,工艺路线3-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1207,Route3_Point7_MaxSpeed,工艺路线3-点7-旋转速度,deg/s,short,PC预置
+3,1208,Route3_Point8_PathId,工艺路线3-点8-路径ID,1-1000,short,PC预置
+3,1209,Route3_Point8_Delay,工艺路线3-点8-延时,0.1秒,short,PC预置
+3,1210,Route3_Point8_Rotate,工艺路线3-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1211,Route3_Point8_MaxSpeed,工艺路线3-点8-旋转速度,deg/s,short,PC预置
+3,1212,Route3_Point9_PathId,工艺路线3-点9-路径ID,1-1000,short,PC预置
+3,1213,Route3_Point9_Delay,工艺路线3-点9-延时,0.1秒,short,PC预置
+3,1214,Route3_Point9_Rotate,工艺路线3-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1215,Route3_Point9_MaxSpeed,工艺路线3-点9-旋转速度,deg/s,short,PC预置
+3,1216,Route3_Point10_PathId,工艺路线3-点10-路径ID,1-1000,short,PC预置
+3,1217,Route3_Point10_Delay,工艺路线3-点10-延时,0.1秒,short,PC预置
+3,1218,Route3_Point10_Rotate,工艺路线3-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1219,Route3_Point10_MaxSpeed,工艺路线3-点10-旋转速度,deg/s,short,PC预置
+3,1220,Route4_Point1_PathId,工艺路线4-点1-路径ID,1-1000,short,PC预置
+3,1221,Route4_Point1_Delay,工艺路线4-点1-延时,0.1秒,short,PC预置
+3,1222,Route4_Point1_Rotate,工艺路线4-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1223,Route4_Point1_MaxSpeed,工艺路线4-点1-旋转速度,deg/s,short,PC预置
+3,1224,Route4_Point2_PathId,工艺路线4-点2-路径ID,1-1000,short,PC预置
+3,1225,Route4_Point2_Delay,工艺路线4-点2-延时,0.1秒,short,PC预置
+3,1226,Route4_Point2_Rotate,工艺路线4-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1227,Route4_Point2_MaxSpeed,工艺路线4-点2-旋转速度,deg/s,short,PC预置
+3,1228,Route4_Point3_PathId,工艺路线4-点3-路径ID,1-1000,short,PC预置
+3,1229,Route4_Point3_Delay,工艺路线4-点3-延时,0.1秒,short,PC预置
+3,1230,Route4_Point3_Rotate,工艺路线4-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1231,Route4_Point3_MaxSpeed,工艺路线4-点3-旋转速度,deg/s,short,PC预置
+3,1232,Route4_Point4_PathId,工艺路线4-点4-路径ID,1-1000,short,PC预置
+3,1233,Route4_Point4_Delay,工艺路线4-点4-延时,0.1秒,short,PC预置
+3,1234,Route4_Point4_Rotate,工艺路线4-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1235,Route4_Point4_MaxSpeed,工艺路线4-点4-旋转速度,deg/s,short,PC预置
+3,1236,Route4_Point5_PathId,工艺路线4-点5-路径ID,1-1000,short,PC预置
+3,1237,Route4_Point5_Delay,工艺路线4-点5-延时,0.1秒,short,PC预置
+3,1238,Route4_Point5_Rotate,工艺路线4-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1239,Route4_Point5_MaxSpeed,工艺路线4-点5-旋转速度,deg/s,short,PC预置
+3,1240,Route4_Point6_PathId,工艺路线4-点6-路径ID,1-1000,short,PC预置
+3,1241,Route4_Point6_Delay,工艺路线4-点6-延时,0.1秒,short,PC预置
+3,1242,Route4_Point6_Rotate,工艺路线4-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1243,Route4_Point6_MaxSpeed,工艺路线4-点6-旋转速度,deg/s,short,PC预置
+3,1244,Route4_Point7_PathId,工艺路线4-点7-路径ID,1-1000,short,PC预置
+3,1245,Route4_Point7_Delay,工艺路线4-点7-延时,0.1秒,short,PC预置
+3,1246,Route4_Point7_Rotate,工艺路线4-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1247,Route4_Point7_MaxSpeed,工艺路线4-点7-旋转速度,deg/s,short,PC预置
+3,1248,Route4_Point8_PathId,工艺路线4-点8-路径ID,1-1000,short,PC预置
+3,1249,Route4_Point8_Delay,工艺路线4-点8-延时,0.1秒,short,PC预置
+3,1250,Route4_Point8_Rotate,工艺路线4-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1251,Route4_Point8_MaxSpeed,工艺路线4-点8-旋转速度,deg/s,short,PC预置
+3,1252,Route4_Point9_PathId,工艺路线4-点9-路径ID,1-1000,short,PC预置
+3,1253,Route4_Point9_Delay,工艺路线4-点9-延时,0.1秒,short,PC预置
+3,1254,Route4_Point9_Rotate,工艺路线4-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1255,Route4_Point9_MaxSpeed,工艺路线4-点9-旋转速度,deg/s,short,PC预置
+3,1256,Route4_Point10_PathId,工艺路线4-点10-路径ID,1-1000,short,PC预置
+3,1257,Route4_Point10_Delay,工艺路线4-点10-延时,0.1秒,short,PC预置
+3,1258,Route4_Point10_Rotate,工艺路线4-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1259,Route4_Point10_MaxSpeed,工艺路线4-点10-旋转速度,deg/s,short,PC预置
+3,1260,Route5_Point1_PathId,工艺路线5-点1-路径ID,1-1000,short,PC预置
+3,1261,Route5_Point1_Delay,工艺路线5-点1-延时,0.1秒,short,PC预置
+3,1262,Route5_Point1_Rotate,工艺路线5-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1263,Route5_Point1_MaxSpeed,工艺路线5-点1-旋转速度,deg/s,short,PC预置
+3,1264,Route5_Point2_PathId,工艺路线5-点2-路径ID,1-1000,short,PC预置
+3,1265,Route5_Point2_Delay,工艺路线5-点2-延时,0.1秒,short,PC预置
+3,1266,Route5_Point2_Rotate,工艺路线5-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1267,Route5_Point2_MaxSpeed,工艺路线5-点2-旋转速度,deg/s,short,PC预置
+3,1268,Route5_Point3_PathId,工艺路线5-点3-路径ID,1-1000,short,PC预置
+3,1269,Route5_Point3_Delay,工艺路线5-点3-延时,0.1秒,short,PC预置
+3,1270,Route5_Point3_Rotate,工艺路线5-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1271,Route5_Point3_MaxSpeed,工艺路线5-点3-旋转速度,deg/s,short,PC预置
+3,1272,Route5_Point4_PathId,工艺路线5-点4-路径ID,1-1000,short,PC预置
+3,1273,Route5_Point4_Delay,工艺路线5-点4-延时,0.1秒,short,PC预置
+3,1274,Route5_Point4_Rotate,工艺路线5-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1275,Route5_Point4_MaxSpeed,工艺路线5-点4-旋转速度,deg/s,short,PC预置
+3,1276,Route5_Point5_PathId,工艺路线5-点5-路径ID,1-1000,short,PC预置
+3,1277,Route5_Point5_Delay,工艺路线5-点5-延时,0.1秒,short,PC预置
+3,1278,Route5_Point5_Rotate,工艺路线5-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1279,Route5_Point5_MaxSpeed,工艺路线5-点5-旋转速度,deg/s,short,PC预置
+3,1280,Route5_Point6_PathId,工艺路线5-点6-路径ID,1-1000,short,PC预置
+3,1281,Route5_Point6_Delay,工艺路线5-点6-延时,0.1秒,short,PC预置
+3,1282,Route5_Point6_Rotate,工艺路线5-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1283,Route5_Point6_MaxSpeed,工艺路线5-点6-旋转速度,deg/s,short,PC预置
+3,1284,Route5_Point7_PathId,工艺路线5-点7-路径ID,1-1000,short,PC预置
+3,1285,Route5_Point7_Delay,工艺路线5-点7-延时,0.1秒,short,PC预置
+3,1286,Route5_Point7_Rotate,工艺路线5-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1287,Route5_Point7_MaxSpeed,工艺路线5-点7-旋转速度,deg/s,short,PC预置
+3,1288,Route5_Point8_PathId,工艺路线5-点8-路径ID,1-1000,short,PC预置
+3,1289,Route5_Point8_Delay,工艺路线5-点8-延时,0.1秒,short,PC预置
+3,1290,Route5_Point8_Rotate,工艺路线5-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1291,Route5_Point8_MaxSpeed,工艺路线5-点8-旋转速度,deg/s,short,PC预置
+3,1292,Route5_Point9_PathId,工艺路线5-点9-路径ID,1-1000,short,PC预置
+3,1293,Route5_Point9_Delay,工艺路线5-点9-延时,0.1秒,short,PC预置
+3,1294,Route5_Point9_Rotate,工艺路线5-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1295,Route5_Point9_MaxSpeed,工艺路线5-点9-旋转速度,deg/s,short,PC预置
+3,1296,Route5_Point10_PathId,工艺路线5-点10-路径ID,1-1000,short,PC预置
+3,1297,Route5_Point10_Delay,工艺路线5-点10-延时,0.1秒,short,PC预置
+3,1298,Route5_Point10_Rotate,工艺路线5-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1299,Route5_Point10_MaxSpeed,工艺路线5-点10-旋转速度,deg/s,short,PC预置
+3,1300,Route6_Point1_PathId,工艺路线6-点1-路径ID,1-1000,short,PC预置
+3,1301,Route6_Point1_Delay,工艺路线6-点1-延时,0.1秒,short,PC预置
+3,1302,Route6_Point1_Rotate,工艺路线6-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1303,Route6_Point1_MaxSpeed,工艺路线6-点1-旋转速度,deg/s,short,PC预置
+3,1304,Route6_Point2_PathId,工艺路线6-点2-路径ID,1-1000,short,PC预置
+3,1305,Route6_Point2_Delay,工艺路线6-点2-延时,0.1秒,short,PC预置
+3,1306,Route6_Point2_Rotate,工艺路线6-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1307,Route6_Point2_MaxSpeed,工艺路线6-点2-旋转速度,deg/s,short,PC预置
+3,1308,Route6_Point3_PathId,工艺路线6-点3-路径ID,1-1000,short,PC预置
+3,1309,Route6_Point3_Delay,工艺路线6-点3-延时,0.1秒,short,PC预置
+3,1310,Route6_Point3_Rotate,工艺路线6-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1311,Route6_Point3_MaxSpeed,工艺路线6-点3-旋转速度,deg/s,short,PC预置
+3,1312,Route6_Point4_PathId,工艺路线6-点4-路径ID,1-1000,short,PC预置
+3,1313,Route6_Point4_Delay,工艺路线6-点4-延时,0.1秒,short,PC预置
+3,1314,Route6_Point4_Rotate,工艺路线6-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1315,Route6_Point4_MaxSpeed,工艺路线6-点4-旋转速度,deg/s,short,PC预置
+3,1316,Route6_Point5_PathId,工艺路线6-点5-路径ID,1-1000,short,PC预置
+3,1317,Route6_Point5_Delay,工艺路线6-点5-延时,0.1秒,short,PC预置
+3,1318,Route6_Point5_Rotate,工艺路线6-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1319,Route6_Point5_MaxSpeed,工艺路线6-点5-旋转速度,deg/s,short,PC预置
+3,1320,Route6_Point6_PathId,工艺路线6-点6-路径ID,1-1000,short,PC预置
+3,1321,Route6_Point6_Delay,工艺路线6-点6-延时,0.1秒,short,PC预置
+3,1322,Route6_Point6_Rotate,工艺路线6-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1323,Route6_Point6_MaxSpeed,工艺路线6-点6-旋转速度,deg/s,short,PC预置
+3,1324,Route6_Point7_PathId,工艺路线6-点7-路径ID,1-1000,short,PC预置
+3,1325,Route6_Point7_Delay,工艺路线6-点7-延时,0.1秒,short,PC预置
+3,1326,Route6_Point7_Rotate,工艺路线6-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1327,Route6_Point7_MaxSpeed,工艺路线6-点7-旋转速度,deg/s,short,PC预置
+3,1328,Route6_Point8_PathId,工艺路线6-点8-路径ID,1-1000,short,PC预置
+3,1329,Route6_Point8_Delay,工艺路线6-点8-延时,0.1秒,short,PC预置
+3,1330,Route6_Point8_Rotate,工艺路线6-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1331,Route6_Point8_MaxSpeed,工艺路线6-点8-旋转速度,deg/s,short,PC预置
+3,1332,Route6_Point9_PathId,工艺路线6-点9-路径ID,1-1000,short,PC预置
+3,1333,Route6_Point9_Delay,工艺路线6-点9-延时,0.1秒,short,PC预置
+3,1334,Route6_Point9_Rotate,工艺路线6-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1335,Route6_Point9_MaxSpeed,工艺路线6-点9-旋转速度,deg/s,short,PC预置
+3,1336,Route6_Point10_PathId,工艺路线6-点10-路径ID,1-1000,short,PC预置
+3,1337,Route6_Point10_Delay,工艺路线6-点10-延时,0.1秒,short,PC预置
+3,1338,Route6_Point10_Rotate,工艺路线6-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1339,Route6_Point10_MaxSpeed,工艺路线6-点10-旋转速度,deg/s,short,PC预置
+3,1340,Route7_Point1_PathId,工艺路线7-点1-路径ID,1-1000,short,PC预置
+3,1341,Route7_Point1_Delay,工艺路线7-点1-延时,0.1秒,short,PC预置
+3,1342,Route7_Point1_Rotate,工艺路线7-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1343,Route7_Point1_MaxSpeed,工艺路线7-点1-旋转速度,deg/s,short,PC预置
+3,1344,Route7_Point2_PathId,工艺路线7-点2-路径ID,1-1000,short,PC预置
+3,1345,Route7_Point2_Delay,工艺路线7-点2-延时,0.1秒,short,PC预置
+3,1346,Route7_Point2_Rotate,工艺路线7-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1347,Route7_Point2_MaxSpeed,工艺路线7-点2-旋转速度,deg/s,short,PC预置
+3,1348,Route7_Point3_PathId,工艺路线7-点3-路径ID,1-1000,short,PC预置
+3,1349,Route7_Point3_Delay,工艺路线7-点3-延时,0.1秒,short,PC预置
+3,1350,Route7_Point3_Rotate,工艺路线7-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1351,Route7_Point3_MaxSpeed,工艺路线7-点3-旋转速度,deg/s,short,PC预置
+3,1352,Route7_Point4_PathId,工艺路线7-点4-路径ID,1-1000,short,PC预置
+3,1353,Route7_Point4_Delay,工艺路线7-点4-延时,0.1秒,short,PC预置
+3,1354,Route7_Point4_Rotate,工艺路线7-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1355,Route7_Point4_MaxSpeed,工艺路线7-点4-旋转速度,deg/s,short,PC预置
+3,1356,Route7_Point5_PathId,工艺路线7-点5-路径ID,1-1000,short,PC预置
+3,1357,Route7_Point5_Delay,工艺路线7-点5-延时,0.1秒,short,PC预置
+3,1358,Route7_Point5_Rotate,工艺路线7-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1359,Route7_Point5_MaxSpeed,工艺路线7-点5-旋转速度,deg/s,short,PC预置
+3,1360,Route7_Point6_PathId,工艺路线7-点6-路径ID,1-1000,short,PC预置
+3,1361,Route7_Point6_Delay,工艺路线7-点6-延时,0.1秒,short,PC预置
+3,1362,Route7_Point6_Rotate,工艺路线7-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1363,Route7_Point6_MaxSpeed,工艺路线7-点6-旋转速度,deg/s,short,PC预置
+3,1364,Route7_Point7_PathId,工艺路线7-点7-路径ID,1-1000,short,PC预置
+3,1365,Route7_Point7_Delay,工艺路线7-点7-延时,0.1秒,short,PC预置
+3,1366,Route7_Point7_Rotate,工艺路线7-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1367,Route7_Point7_MaxSpeed,工艺路线7-点7-旋转速度,deg/s,short,PC预置
+3,1368,Route7_Point8_PathId,工艺路线7-点8-路径ID,1-1000,short,PC预置
+3,1369,Route7_Point8_Delay,工艺路线7-点8-延时,0.1秒,short,PC预置
+3,1370,Route7_Point8_Rotate,工艺路线7-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1371,Route7_Point8_MaxSpeed,工艺路线7-点8-旋转速度,deg/s,short,PC预置
+3,1372,Route7_Point9_PathId,工艺路线7-点9-路径ID,1-1000,short,PC预置
+3,1373,Route7_Point9_Delay,工艺路线7-点9-延时,0.1秒,short,PC预置
+3,1374,Route7_Point9_Rotate,工艺路线7-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1375,Route7_Point9_MaxSpeed,工艺路线7-点9-旋转速度,deg/s,short,PC预置
+3,1376,Route7_Point10_PathId,工艺路线7-点10-路径ID,1-1000,short,PC预置
+3,1377,Route7_Point10_Delay,工艺路线7-点10-延时,0.1秒,short,PC预置
+3,1378,Route7_Point10_Rotate,工艺路线7-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1379,Route7_Point10_MaxSpeed,工艺路线7-点10-旋转速度,deg/s,short,PC预置
+3,1380,Route8_Point1_PathId,工艺路线8-点1-路径ID,1-1000,short,PC预置
+3,1381,Route8_Point1_Delay,工艺路线8-点1-延时,0.1秒,short,PC预置
+3,1382,Route8_Point1_Rotate,工艺路线8-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1383,Route8_Point1_MaxSpeed,工艺路线8-点1-旋转速度,deg/s,short,PC预置
+3,1384,Route8_Point2_PathId,工艺路线8-点2-路径ID,1-1000,short,PC预置
+3,1385,Route8_Point2_Delay,工艺路线8-点2-延时,0.1秒,short,PC预置
+3,1386,Route8_Point2_Rotate,工艺路线8-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1387,Route8_Point2_MaxSpeed,工艺路线8-点2-旋转速度,deg/s,short,PC预置
+3,1388,Route8_Point3_PathId,工艺路线8-点3-路径ID,1-1000,short,PC预置
+3,1389,Route8_Point3_Delay,工艺路线8-点3-延时,0.1秒,short,PC预置
+3,1390,Route8_Point3_Rotate,工艺路线8-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1391,Route8_Point3_MaxSpeed,工艺路线8-点3-旋转速度,deg/s,short,PC预置
+3,1392,Route8_Point4_PathId,工艺路线8-点4-路径ID,1-1000,short,PC预置
+3,1393,Route8_Point4_Delay,工艺路线8-点4-延时,0.1秒,short,PC预置
+3,1394,Route8_Point4_Rotate,工艺路线8-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1395,Route8_Point4_MaxSpeed,工艺路线8-点4-旋转速度,deg/s,short,PC预置
+3,1396,Route8_Point5_PathId,工艺路线8-点5-路径ID,1-1000,short,PC预置
+3,1397,Route8_Point5_Delay,工艺路线8-点5-延时,0.1秒,short,PC预置
+3,1398,Route8_Point5_Rotate,工艺路线8-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1399,Route8_Point5_MaxSpeed,工艺路线8-点5-旋转速度,deg/s,short,PC预置
+3,1400,Route8_Point6_PathId,工艺路线8-点6-路径ID,1-1000,short,PC预置
+3,1401,Route8_Point6_Delay,工艺路线8-点6-延时,0.1秒,short,PC预置
+3,1402,Route8_Point6_Rotate,工艺路线8-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1403,Route8_Point6_MaxSpeed,工艺路线8-点6-旋转速度,deg/s,short,PC预置
+3,1404,Route8_Point7_PathId,工艺路线8-点7-路径ID,1-1000,short,PC预置
+3,1405,Route8_Point7_Delay,工艺路线8-点7-延时,0.1秒,short,PC预置
+3,1406,Route8_Point7_Rotate,工艺路线8-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1407,Route8_Point7_MaxSpeed,工艺路线8-点7-旋转速度,deg/s,short,PC预置
+3,1408,Route8_Point8_PathId,工艺路线8-点8-路径ID,1-1000,short,PC预置
+3,1409,Route8_Point8_Delay,工艺路线8-点8-延时,0.1秒,short,PC预置
+3,1410,Route8_Point8_Rotate,工艺路线8-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1411,Route8_Point8_MaxSpeed,工艺路线8-点8-旋转速度,deg/s,short,PC预置
+3,1412,Route8_Point9_PathId,工艺路线8-点9-路径ID,1-1000,short,PC预置
+3,1413,Route8_Point9_Delay,工艺路线8-点9-延时,0.1秒,short,PC预置
+3,1414,Route8_Point9_Rotate,工艺路线8-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1415,Route8_Point9_MaxSpeed,工艺路线8-点9-旋转速度,deg/s,short,PC预置
+3,1416,Route8_Point10_PathId,工艺路线8-点10-路径ID,1-1000,short,PC预置
+3,1417,Route8_Point10_Delay,工艺路线8-点10-延时,0.1秒,short,PC预置
+3,1418,Route8_Point10_Rotate,工艺路线8-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1419,Route8_Point10_MaxSpeed,工艺路线8-点10-旋转速度,deg/s,short,PC预置
+3,1420,Route9_Point1_PathId,工艺路线9-点1-路径ID,1-1000,short,PC预置
+3,1421,Route9_Point1_Delay,工艺路线9-点1-延时,0.1秒,short,PC预置
+3,1422,Route9_Point1_Rotate,工艺路线9-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1423,Route9_Point1_MaxSpeed,工艺路线9-点1-旋转速度,deg/s,short,PC预置
+3,1424,Route9_Point2_PathId,工艺路线9-点2-路径ID,1-1000,short,PC预置
+3,1425,Route9_Point2_Delay,工艺路线9-点2-延时,0.1秒,short,PC预置
+3,1426,Route9_Point2_Rotate,工艺路线9-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1427,Route9_Point2_MaxSpeed,工艺路线9-点2-旋转速度,deg/s,short,PC预置
+3,1428,Route9_Point3_PathId,工艺路线9-点3-路径ID,1-1000,short,PC预置
+3,1429,Route9_Point3_Delay,工艺路线9-点3-延时,0.1秒,short,PC预置
+3,1430,Route9_Point3_Rotate,工艺路线9-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1431,Route9_Point3_MaxSpeed,工艺路线9-点3-旋转速度,deg/s,short,PC预置
+3,1432,Route9_Point4_PathId,工艺路线9-点4-路径ID,1-1000,short,PC预置
+3,1433,Route9_Point4_Delay,工艺路线9-点4-延时,0.1秒,short,PC预置
+3,1434,Route9_Point4_Rotate,工艺路线9-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1435,Route9_Point4_MaxSpeed,工艺路线9-点4-旋转速度,deg/s,short,PC预置
+3,1436,Route9_Point5_PathId,工艺路线9-点5-路径ID,1-1000,short,PC预置
+3,1437,Route9_Point5_Delay,工艺路线9-点5-延时,0.1秒,short,PC预置
+3,1438,Route9_Point5_Rotate,工艺路线9-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1439,Route9_Point5_MaxSpeed,工艺路线9-点5-旋转速度,deg/s,short,PC预置
+3,1440,Route9_Point6_PathId,工艺路线9-点6-路径ID,1-1000,short,PC预置
+3,1441,Route9_Point6_Delay,工艺路线9-点6-延时,0.1秒,short,PC预置
+3,1442,Route9_Point6_Rotate,工艺路线9-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1443,Route9_Point6_MaxSpeed,工艺路线9-点6-旋转速度,deg/s,short,PC预置
+3,1444,Route9_Point7_PathId,工艺路线9-点7-路径ID,1-1000,short,PC预置
+3,1445,Route9_Point7_Delay,工艺路线9-点7-延时,0.1秒,short,PC预置
+3,1446,Route9_Point7_Rotate,工艺路线9-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1447,Route9_Point7_MaxSpeed,工艺路线9-点7-旋转速度,deg/s,short,PC预置
+3,1448,Route9_Point8_PathId,工艺路线9-点8-路径ID,1-1000,short,PC预置
+3,1449,Route9_Point8_Delay,工艺路线9-点8-延时,0.1秒,short,PC预置
+3,1450,Route9_Point8_Rotate,工艺路线9-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1451,Route9_Point8_MaxSpeed,工艺路线9-点8-旋转速度,deg/s,short,PC预置
+3,1452,Route9_Point9_PathId,工艺路线9-点9-路径ID,1-1000,short,PC预置
+3,1453,Route9_Point9_Delay,工艺路线9-点9-延时,0.1秒,short,PC预置
+3,1454,Route9_Point9_Rotate,工艺路线9-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1455,Route9_Point9_MaxSpeed,工艺路线9-点9-旋转速度,deg/s,short,PC预置
+3,1456,Route9_Point10_PathId,工艺路线9-点10-路径ID,1-1000,short,PC预置
+3,1457,Route9_Point10_Delay,工艺路线9-点10-延时,0.1秒,short,PC预置
+3,1458,Route9_Point10_Rotate,工艺路线9-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1459,Route9_Point10_MaxSpeed,工艺路线9-点10-旋转速度,deg/s,short,PC预置
+3,1460,Route10_Point1_PathId,工艺路线10-点1-路径ID,1-1000,short,PC预置
+3,1461,Route10_Point1_Delay,工艺路线10-点1-延时,0.1秒,short,PC预置
+3,1462,Route10_Point1_Rotate,工艺路线10-点1-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1463,Route10_Point1_MaxSpeed,工艺路线10-点1-旋转速度,deg/s,short,PC预置
+3,1464,Route10_Point2_PathId,工艺路线10-点2-路径ID,1-1000,short,PC预置
+3,1465,Route10_Point2_Delay,工艺路线10-点2-延时,0.1秒,short,PC预置
+3,1466,Route10_Point2_Rotate,工艺路线10-点2-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1467,Route10_Point2_MaxSpeed,工艺路线10-点2-旋转速度,deg/s,short,PC预置
+3,1468,Route10_Point3_PathId,工艺路线10-点3-路径ID,1-1000,short,PC预置
+3,1469,Route10_Point3_Delay,工艺路线10-点3-延时,0.1秒,short,PC预置
+3,1470,Route10_Point3_Rotate,工艺路线10-点3-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1471,Route10_Point3_MaxSpeed,工艺路线10-点3-旋转速度,deg/s,short,PC预置
+3,1472,Route10_Point4_PathId,工艺路线10-点4-路径ID,1-1000,short,PC预置
+3,1473,Route10_Point4_Delay,工艺路线10-点4-延时,0.1秒,short,PC预置
+3,1474,Route10_Point4_Rotate,工艺路线10-点4-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1475,Route10_Point4_MaxSpeed,工艺路线10-点4-旋转速度,deg/s,short,PC预置
+3,1476,Route10_Point5_PathId,工艺路线10-点5-路径ID,1-1000,short,PC预置
+3,1477,Route10_Point5_Delay,工艺路线10-点5-延时,0.1秒,short,PC预置
+3,1478,Route10_Point5_Rotate,工艺路线10-点5-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1479,Route10_Point5_MaxSpeed,工艺路线10-点5-旋转速度,deg/s,short,PC预置
+3,1480,Route10_Point6_PathId,工艺路线10-点6-路径ID,1-1000,short,PC预置
+3,1481,Route10_Point6_Delay,工艺路线10-点6-延时,0.1秒,short,PC预置
+3,1482,Route10_Point6_Rotate,工艺路线10-点6-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1483,Route10_Point6_MaxSpeed,工艺路线10-点6-旋转速度,deg/s,short,PC预置
+3,1484,Route10_Point7_PathId,工艺路线10-点7-路径ID,1-1000,short,PC预置
+3,1485,Route10_Point7_Delay,工艺路线10-点7-延时,0.1秒,short,PC预置
+3,1486,Route10_Point7_Rotate,工艺路线10-点7-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1487,Route10_Point7_MaxSpeed,工艺路线10-点7-旋转速度,deg/s,short,PC预置
+3,1488,Route10_Point8_PathId,工艺路线10-点8-路径ID,1-1000,short,PC预置
+3,1489,Route10_Point8_Delay,工艺路线10-点8-延时,0.1秒,short,PC预置
+3,1490,Route10_Point8_Rotate,工艺路线10-点8-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1491,Route10_Point8_MaxSpeed,工艺路线10-点8-旋转速度,deg/s,short,PC预置
+3,1492,Route10_Point9_PathId,工艺路线10-点9-路径ID,1-1000,short,PC预置
+3,1493,Route10_Point9_Delay,工艺路线10-点9-延时,0.1秒,short,PC预置
+3,1494,Route10_Point9_Rotate,工艺路线10-点9-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1495,Route10_Point9_MaxSpeed,工艺路线10-点9-旋转速度,deg/s,short,PC预置
+3,1496,Route10_Point10_PathId,工艺路线10-点10-路径ID,1-1000,short,PC预置
+3,1497,Route10_Point10_Delay,工艺路线10-点10-延时,0.1秒,short,PC预置
+3,1498,Route10_Point10_Rotate,工艺路线10-点10-原地旋转角度,度,short,逆时针为正 顺时针为负
+3,1499,Route10_Point10_MaxSpeed,工艺路线10-点10-旋转速度,deg/s,short,PC预置
