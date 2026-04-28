@@ -198,7 +198,14 @@ namespace WindowsFormsApp_agv
             };
 
             var btnStart = CreateStyledButton("全局启动", SuccessGreen);
-            btnStart.Click += (s, e) => SendCommandToAll(1);
+            btnStart.Click += (s, e) =>
+            {
+                if (MessageBox.Show("确定要【启动】所有 AGV 吗？", "操作确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SendCommandToAll(1);
+                }
+            };
+
             var btnStop = CreateStyledButton("全局停止", DangerRed);
             btnStop.Click += (s, e) => SendCommandToAll(2);
             var btnPause = CreateStyledButton("全局暂停", WarningOrange);
@@ -1039,6 +1046,11 @@ namespace WindowsFormsApp_agv
                 gridPoints.Rows[i].Cells[1].Value = route.Points[i].DelayTicks;
                 gridPoints.Rows[i].Cells[2].Value = route.Points[i].RotateAngle;
                 gridPoints.Rows[i].Cells[3].Value = route.Points[i].RotateSpeed;
+            }
+            // 设置表格左上角表头为当前工艺路线名称
+            if (routeIndex >= 0 && routeIndex < lstRoutes.Items.Count)
+            {
+                gridPoints.TopLeftHeaderCell.Value = $"{lstRoutes.Items[routeIndex]}";
             }
         }
 
