@@ -89,6 +89,7 @@ namespace WindowsFormsApp_agv
         private System.Windows.Forms.Timer _timeoutTimer; // 超时检测定时器
 
         private readonly ushort[] _holdingRegisters = new ushort[RegistersPerAgv * AgvCount + 100]; // Modbus寄存器区
+        private readonly bool[] _holdingCoils = new bool[2000]; // Modbus线圈区 (2000位)
 
         /// <summary>
         /// 构造函数，初始化UI、数据和服务器
@@ -455,6 +456,10 @@ namespace WindowsFormsApp_agv
 
                     if (pdu[0] == 3) 
                         HandleReadRegisters(stream, h, pdu);
+                    else if (pdu[0] == 1)
+                        HandleReadCoils(stream, h, pdu);
+                    else if (pdu[0] == 15)
+                        HandleWriteCoils(stream, h, pdu);
                     else if (pdu[0] == 16)
                         HandleWriteRegisters(stream, h, pdu);
                 }
@@ -477,6 +482,63 @@ namespace WindowsFormsApp_agv
                 ushort v = (addr + i) < _holdingRegisters.Length ? _holdingRegisters[addr + i] : (ushort)0;
                 resp[9 + i * 2] = (byte)(v >> 8); resp[10 + i * 2] = (byte)(v & 0xFF);
             }
+            s.Write(resp, 0, resp.Length);
+        }
+
+        /// <summary>
+        /// 处理Modbus读线圈请求 (FC1)
+        /// </summary>
+        private void HandleReadCoils(NetworkStream s, byte[] h, byte[] p)
+        {
+            int addr = (p[1] << 8) | p[2];
+            int qty = (p[3] << 8) | p[4];
+            int byteCount = (qty + 7) / 8;
+            int rLen = 3 + byteCount; // UnitID(1) + FC(1) + ByteCnt(1) + Data(N)
+
+            byte[] resp = new byte[7 + rLen - 1];
+            Array.Copy(h, resp, 7);
+
+            // 更新 MBAP 长度
+            resp[4] = (byte)(rLen >> 8);
+            resp[5] = (byte)(rLen & 0xFF);
+            resp[7] = 1; // FC1
+            resp[8] = (byte)byteCount;
+
+            // 将 bool 数组打包成位字节流
+            for (int i = 0; i < qty; i++)
+            {
+                if ((addr + i) < _holdingCoils.Length && _holdingCoils[addr + i])
+                {
+                    resp[9 + (i / 8)] |= (byte)(1 << (i % 8));
+                }
+            }
+            s.Write(resp, 0, resp.Length);
+        }
+
+        /// <summary>
+        /// 处理Modbus写线圈请求 (FC15)
+        /// </summary>
+        private void HandleWriteCoils(NetworkStream s, byte[] h, byte[] p)
+        {
+            int addr = (p[1] << 8) | p[2];
+            int qty = (p[3] << 8) | p[4];
+            int byteCount = p[5];
+
+            for (int i = 0; i < qty; i++)
+            {
+                if ((addr + i) < _holdingCoils.Length)
+                {
+                    int byteIdx = 6 + (i / 8);
+                    int bitIdx = i % 8;
+                    _holdingCoils[addr + i] = (p[byteIdx] & (1 << bitIdx)) != 0;
+                }
+            }
+
+            // 返回标准确认报文 (12字节)
+            byte[] resp = new byte[12];
+            Array.Copy(h, resp, 7);
+            resp[4] = 0; resp[5] = 6; resp[7] = 15;
+            Array.Copy(p, 1, resp, 8, 4);
             s.Write(resp, 0, resp.Length);
         }
 
