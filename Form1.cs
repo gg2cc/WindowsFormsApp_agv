@@ -192,7 +192,7 @@ namespace WindowsFormsApp_agv
             // 1. 标题区
             var titlePanel = new Panel { Dock = DockStyle.Fill, BackColor = PanelBg, Padding = new Padding(12, 12, 12, 10) };
             var lblTitle = new Label { Text = "AGV 实时监控中心", Font = new Font("Segoe UI", 16F, FontStyle.Bold), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, ForeColor = HighlightBlue };
-            var lblLogo = new Label { Text = " 机械 ", Font = new Font("微软雅黑", 12F, FontStyle.Bold), AutoSize = true, ForeColor = Color.FromArgb(255, 200, 87) };
+            var lblLogo = new Label { Text = "", Font = new Font("微软雅黑", 12F, FontStyle.Bold), AutoSize = true, ForeColor = Color.FromArgb(255, 200, 87) };
 
             titlePanel.Controls.Add(lblLogo); // 先添加 Logo 确保层级
             titlePanel.Controls.Add(lblTitle);
