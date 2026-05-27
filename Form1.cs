@@ -1,5 +1,6 @@
 ﻿using System; // 基础命名空间
 using System.Collections.Generic; // 泛型集合
+using System.Deployment.Application; // 发布版本相关
 using System.Drawing; // 图形和颜色相关
 using System.Net; // 网络相关
 using System.Net.Sockets; // Socket 通信
@@ -55,11 +56,11 @@ namespace WindowsFormsApp_agv
     {
         // AGV数量、路线数量、每条路线点数等参数
         private const int AgvCount = 3;                // AGV数量
-        private const int RouteCount = 10;             // 每台AGV的路线数量
+        private const int RouteCount = 20;             // 每台AGV的路线数量
         private const int PointsPerRoute = 10;         // 每条路线的点数
         private const int RegistersPerPoint = 4;       // 每个点占用寄存器数
         private const int RegistersPerRoute = PointsPerRoute * RegistersPerPoint; // 每条路线占用寄存器数
-        private const int RegistersPerAgv = 500;       // 每台AGV分配的寄存器空间
+        private const int RegistersPerAgv = 1000;      // 每台AGV分配的寄存器空间
 
         // Modbus寄存器地址偏移量常量
         private const int StatusOffset = 0;            // 状态区起始偏移
@@ -116,7 +117,7 @@ namespace WindowsFormsApp_agv
         }
 
         /// <summary>
-        /// 初始化所有AGV的工艺路线库，默认每台AGV有10条路线，每条路线10个点
+        /// 初始化所有AGV的工艺路线库，默认每台AGV有20条路线，每条路线10个点
         /// </summary>
         private void InitializeRouteLibraries()
         {
@@ -192,7 +193,18 @@ namespace WindowsFormsApp_agv
             // 1. 标题区
             var titlePanel = new Panel { Dock = DockStyle.Fill, BackColor = PanelBg, Padding = new Padding(12, 12, 12, 10) };
             var lblTitle = new Label { Text = "AGV 实时监控中心", Font = new Font("Segoe UI", 16F, FontStyle.Bold), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, ForeColor = HighlightBlue };
-            var lblLogo = new Label { Text = "APP", Font = new Font("微软雅黑", 12F, FontStyle.Bold), AutoSize = true, ForeColor = Color.FromArgb(255, 200, 87) };
+
+            string version = "1.0.0.0";
+            if (ApplicationDeployment.IsNetworkDeployed)
+            {
+                version = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+            }
+            else
+            {
+                version = Application.ProductVersion;
+            }
+
+            var lblLogo = new Label { Text = "Ver: " + version, Font = new Font("微软雅黑", 12F, FontStyle.Bold), AutoSize = true, ForeColor = Color.FromArgb(255, 200, 87) };
 
             titlePanel.Controls.Add(lblLogo); // 先添加 Logo 确保层级
             titlePanel.Controls.Add(lblTitle);
@@ -1012,7 +1024,7 @@ namespace WindowsFormsApp_agv
             var infoLabel = new Label
             {
                 Dock = DockStyle.Fill,
-                Text = "配置说明：每条路线最多包含10个点",
+                Text = "配置说明：每条路线最多包含10个路径点（点01 到 点10），路径点ID 是指地图上的路径点 P 的序号",
                 ForeColor = Color.FromArgb(178, 190, 195),
                 Font = new Font("Microsoft YaHei", 11F, FontStyle.Bold),
                 TextAlign = ContentAlignment.MiddleLeft
@@ -1049,7 +1061,7 @@ namespace WindowsFormsApp_agv
             gridPoints.RowHeadersDefaultCellStyle.Font = new Font("Microsoft YaHei", 11F, FontStyle.Bold);
             gridPoints.CellPainting += gridPoints_CellPainting;
 
-            gridPoints.Columns.Add("PathId", "路径 ID(地图)");
+            gridPoints.Columns.Add("PathId", "路径点 ID(地图)");
             gridPoints.Columns.Add("DelayTicks", "启动延时(0.1秒)");
             gridPoints.Columns.Add("RotateAngle", "旋转角度(度)");
             gridPoints.Columns.Add("RotateSpeed", "旋转速度(度/秒)");
