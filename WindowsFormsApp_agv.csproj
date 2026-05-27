@@ -26,8 +26,9 @@
     <InstallUrl>https://shijia-x5vze01nz.maozi.io/</InstallUrl>
     <ProductName>shijia_app</ProductName>
     <PublisherName>HuiZ AMR</PublisherName>
+    <WebPage>index.html</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
