@@ -4,6 +4,7 @@ using System.Drawing; // 图形和颜色相关
 using System.Net; // 网络相关
 using System.Net.Sockets; // Socket 通信
 using System.Threading; // 多线程
+using System.Threading.Tasks; // 异步任务
 using System.Windows.Forms; // WinForms UI
 
 namespace WindowsFormsApp_agv
@@ -133,6 +134,30 @@ namespace WindowsFormsApp_agv
                     }
                     routes.Add(route);
                 }
+
+                // 尝试从持久化文件加载
+                string persistFile = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"agv_routes_{agvIndex + 1}.json");
+                if (System.IO.File.Exists(persistFile))
+                {
+                    try
+                    {
+                        var json = System.IO.File.ReadAllText(persistFile);
+                        var loaded = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ProcessRoute>>(json);
+                        if (loaded != null && loaded.Count == routes.Count)
+                        {
+                            for (int i = 0; i < routes.Count; i++)
+                            {
+                                routes[i].RouteNumber = loaded[i].RouteNumber;
+                                for (int j = 0; j < routes[i].Points.Count && j < loaded[i].Points.Count; j++)
+                                {
+                                    routes[i].Points[j] = loaded[i].Points[j];
+                                }
+                            }
+                        }
+                    }
+                    catch { /* ignore file errors */ }
+                }
+
                 _agvRoutes.Add(routes);
             }
         }
@@ -167,7 +192,7 @@ namespace WindowsFormsApp_agv
             // 1. 标题区
             var titlePanel = new Panel { Dock = DockStyle.Fill, BackColor = PanelBg, Padding = new Padding(12, 12, 12, 10) };
             var lblTitle = new Label { Text = "AGV 实时监控中心", Font = new Font("Segoe UI", 16F, FontStyle.Bold), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter, ForeColor = HighlightBlue };
-            var lblLogo = new Label { Text = "宁波视佳舞台", Font = new Font("微软雅黑", 12F, FontStyle.Bold), AutoSize = true, ForeColor = Color.FromArgb(255, 200, 87) };
+            var lblLogo = new Label { Text = "    ", Font = new Font("微软雅黑", 12F, FontStyle.Bold), AutoSize = true, ForeColor = Color.FromArgb(255, 200, 87) };
 
             titlePanel.Controls.Add(lblLogo); // 先添加 Logo 确保层级
             titlePanel.Controls.Add(lblTitle);
@@ -354,7 +379,7 @@ namespace WindowsFormsApp_agv
         /// <summary>
         /// 向所有勾选的AGV下发全局指令（启动/停止/暂停）
         /// </summary>
-        private void SendCommandToAll(int cmdType)
+        private async void SendCommandToAll(int cmdType)
         {
             var lines = new List<string>();
             for (int i = 0; i < AgvCount; i++)
@@ -379,6 +404,17 @@ namespace WindowsFormsApp_agv
                 return;
             }
             MessageBox.Show("已下发指令:\n\n" + string.Join("\n", lines), "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // 保持高电平信号 1 秒，确保 PLC 能够稳定采集到信号变化
+            await Task.Delay(1000);
+
+            // 延时后复位指令区，确保 PLC 能通过 0->1 变化感知新指令
+            for (int i = 0; i < AgvCount; i++)
+            {
+                int baseAddr = GetAgvBase(i);
+                WriteUnsignedRegister(baseAddr + CommandOffset, 0);
+                WriteUnsignedRegister(baseAddr + CommandValueOffset, 0);
+            }
         }
 
         /// <summary>
@@ -433,7 +469,7 @@ namespace WindowsFormsApp_agv
             while (_isRunning)
             {
                 try { var client = _server.AcceptTcpClient(); new Thread(HandleModbusClient) { IsBackground = true }.Start(client); }
-                catch { }
+                catch { if (_isRunning) Thread.Sleep(50); }
             }
         }
 
