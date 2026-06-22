@@ -12,10 +12,10 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>false</Deterministic>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>E:\Documents\Codesys\视佳舞台\WindowsFormsApp_agv\docs\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\Documents\Codesys\视佳舞台\WindowsFormsApp_agv\release\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -23,11 +23,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://shijia-x5vze01nz.maozi.io/</InstallUrl>
     <ProductName>shijia_app</ProductName>
     <PublisherName>HuiZ AMR</PublisherName>
     <WebPage>index.html</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
