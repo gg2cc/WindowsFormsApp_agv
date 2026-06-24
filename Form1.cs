@@ -621,14 +621,14 @@ namespace WindowsFormsApp_agv
         }
 
         /// <summary>
-        /// 超时检测定时器回调，若AGV超2秒未更新则判为离线
+        /// 超时检测定时器回调，若AGV超3秒未更新则判为离线
         /// </summary>
         private void TimeoutTimer_Tick(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
             for (int i = 0; i < AgvCount; i++)
             {
-                if ((now - _lastUpdateTicks[i]).TotalSeconds > 2)
+                if ((now - _lastUpdateTicks[i]).TotalSeconds > 3)
                 {
                     _agvControls[i].SetConnection(false);
                 }
