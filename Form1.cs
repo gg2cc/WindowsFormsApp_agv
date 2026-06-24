@@ -217,10 +217,11 @@ namespace WindowsFormsApp_agv
             mainLayout.Controls.Add(titlePanel, 0, 0);
 
             // 2. 核心显示区 (监控 + 路线)
-            mainLayout.Controls.Add(CreateTripleControlGrid(_agvControls, i => new AgvStateControl(i + 1)), 0, 1);
+            string[] names = { "小船", "石头", "松树" };
+            mainLayout.Controls.Add(CreateTripleControlGrid(_agvControls, i => new AgvStateControl(i + 1, i < names.Length ? names[i] : "")), 0, 1);
             mainLayout.Controls.Add(CreateTripleControlGrid(_routeControls, i =>
             {
-                var ctrl = new RouteSelectionControl(i + 1, RouteCount);
+                var ctrl = new RouteSelectionControl(i + 1, RouteCount, i < names.Length ? names[i] : "");
                 ctrl.RouteSelectionChanged += (s, e) => SyncSelectedRouteRegister(i);
                 ctrl.EditClicked += (s, e) => OpenRouteEditor(i);
                 return ctrl;
@@ -311,7 +312,9 @@ namespace WindowsFormsApp_agv
         /// <param name="agvIndex">AGV索引</param>
         private void OpenRouteEditor(int agvIndex)
         {
-            using (var editor = new RouteEditorForm(agvIndex + 1, _agvRoutes[agvIndex], delegate
+            string[] names = { "小船", "石头", "松树" };
+            string name = agvIndex < names.Length ? names[agvIndex] : "";
+            using (var editor = new RouteEditorForm(agvIndex + 1, _agvRoutes[agvIndex], name, delegate
             {
                 SyncRouteLibraryToRegisters(agvIndex);
             }))
@@ -682,9 +685,9 @@ namespace WindowsFormsApp_agv
         /// <summary>
         /// 构造函数，初始化AGV状态控件
         /// </summary>
-        public AgvStateControl(int id)
+        public AgvStateControl(int id, string name = "")
         {
-            Text = string.Format("AGV #{0}", id);
+            Text = string.Format("AGV #{0} {1}", id, name);
             ForeColor = Color.White;
             Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             Dock = DockStyle.Fill;
@@ -786,9 +789,9 @@ namespace WindowsFormsApp_agv
         /// <summary>
         /// 构造函数，初始化路线选择控件
         /// </summary>
-        public RouteSelectionControl(int agvId, int routeCount)
+        public RouteSelectionControl(int agvId, int routeCount, string name = "")
         {
-            Text = string.Format("AGV #{0} 工艺路线", agvId);
+            Text = string.Format("AGV #{0} {1} 工艺路线", agvId, name);
             Dock = DockStyle.Fill;
             Margin = new Padding(8);
             Padding = new Padding(14);
@@ -917,8 +920,9 @@ namespace WindowsFormsApp_agv
         /// </summary>
         /// <param name="agvId">AGV编号</param>
         /// <param name="routes">路线列表</param>
+        /// <param name="name">AGV名称</param>
         /// <param name="saveCallback">保存回调</param>
-        public RouteEditorForm(int agvId, List<ProcessRoute> routes, Action saveCallback)
+        public RouteEditorForm(int agvId, List<ProcessRoute> routes, string name, Action saveCallback)
         {
             _routes = routes;
             _saveCallback = saveCallback;
@@ -946,7 +950,7 @@ namespace WindowsFormsApp_agv
                 catch { /* ignore file errors */ }
             }
 
-            Text = string.Format("AGV #{0} 工艺路线编辑器 (10路线 × 10点位)", agvId);
+            Text = string.Format("AGV #{0} {1} 工艺路线编辑器 (20路线 × 10点位)", agvId, name);
             Size = new Size(1100, 780);
             StartPosition = FormStartPosition.CenterParent;
             BackColor = Color.FromArgb(41, 45, 54);
