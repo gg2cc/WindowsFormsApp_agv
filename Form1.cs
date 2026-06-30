@@ -88,6 +88,7 @@ namespace WindowsFormsApp_agv
         private readonly List<RouteSelectionControl> _routeControls = new List<RouteSelectionControl>(); // 路线选择控件集合
         private readonly List<List<ProcessRoute>> _agvRoutes = new List<List<ProcessRoute>>(); // 所有AGV的路线库
         private readonly DateTime[] _lastUpdateTicks = new DateTime[AgvCount]; // AGV最后更新时间戳
+        private readonly bool[] _isAgvOnline = new bool[AgvCount]; // AGV在线状态记录
         private System.Windows.Forms.Timer _timeoutTimer; // 超时检测定时器
 
         private readonly ushort[] _holdingRegisters = new ushort[RegistersPerAgv * AgvCount + 100]; // Modbus寄存器区
@@ -396,6 +397,7 @@ namespace WindowsFormsApp_agv
         /// </summary>
         private async void SendCommandToAll(int cmdType)
         {
+            Logger.Info($"Global command triggered: {GetCommandText(cmdType)}");
             var lines = new List<string>();
             for (int i = 0; i < AgvCount; i++)
             {
@@ -410,15 +412,18 @@ namespace WindowsFormsApp_agv
                 WriteUnsignedRegister(baseAddr + SelectedRouteOffset, (ushort)route);
                 WriteUnsignedRegister(baseAddr + CommandOffset, (ushort)cmdType);
                 WriteUnsignedRegister(baseAddr + CommandValueOffset, 1);
-                lines.Add(string.Format("AGV #{0}: {1}, 路线 {2}", i + 1, GetCommandText(cmdType), route));
+                lines.Add(string.Format("    AGV #{0}: {1}, 路线 {2}", i + 1, GetCommandText(cmdType), route));
             }
 
             if (lines.Count == 0)
             {
                 MessageBox.Show("未勾选任何 AGV。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Logger.Info("未勾选任何 AGV，未发送指令。");
                 return;
             }
             MessageBox.Show("已下发指令:\n\n" + string.Join("\n", lines), "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Logger.Info("已下发指令:\n" + string.Join("\n", lines));
 
             // 保持高电平信号 1 秒，确保 PLC 能够稳定采集到信号变化
             await Task.Delay(1000);
@@ -430,6 +435,7 @@ namespace WindowsFormsApp_agv
                 WriteUnsignedRegister(baseAddr + CommandOffset, 0);
                 WriteUnsignedRegister(baseAddr + CommandValueOffset, 0);
             }
+            Logger.Info("指令区已复位。");
         }
 
         /// <summary>
@@ -469,11 +475,20 @@ namespace WindowsFormsApp_agv
         /// </summary>
         private void StartModbusServer()
         {
-            _server = new TcpListener(IPAddress.Any, 502);
-            _isRunning = true;
-            _server.Start();
-            _listenThread = new Thread(ListenForClients) { IsBackground = true };
-            _listenThread.Start();
+            try
+            {
+                _server = new TcpListener(IPAddress.Any, 502);
+                _isRunning = true;
+                _server.Start();
+                Logger.Info("Modbus TCP Server started on port 502.");
+                _listenThread = new Thread(ListenForClients) { IsBackground = true };
+                _listenThread.Start();
+            }
+            catch (Exception ex)
+            {
+                Logger.Error("Failed to start Modbus Server", ex);
+                MessageBox.Show("启动 Modbus 服务失败：" + ex.Message);
+            }
         }
 
         /// <summary>
@@ -494,6 +509,9 @@ namespace WindowsFormsApp_agv
         private void HandleModbusClient(object obj)
         {
             var client = (TcpClient)obj;
+            string clientIp = client.Client.RemoteEndPoint.ToString();
+            Logger.Info($"Client connected: {clientIp}");
+
             NetworkStream stream = client.GetStream();
             byte[] h = new byte[7];
             try
@@ -515,8 +533,15 @@ namespace WindowsFormsApp_agv
                         HandleWriteRegisters(stream, h, pdu);
                 }
             }
-            catch { }
-            finally { client.Close(); }
+            catch (Exception ex)
+            {
+                Logger.Error($"Communication error with {clientIp}", ex);
+            }
+            finally 
+            { 
+                client.Close(); 
+                Logger.Info($"Client disconnected: {clientIp}");
+            }
         }
 
         /// <summary>
@@ -630,6 +655,12 @@ namespace WindowsFormsApp_agv
             {
                 if ((now - _lastUpdateTicks[i]).TotalSeconds > 3)
                 {
+                    if (_isAgvOnline[i])
+                    {
+                        string[] names = { "小船", "石头", "松树" };
+                        Logger.Info($"AGV #{i + 1} ({names[i]}) 离线 - 通讯超时");
+                        _isAgvOnline[i] = false;
+                    }
                     _agvControls[i].SetConnection(false);
                 }
             }
@@ -648,6 +679,12 @@ namespace WindowsFormsApp_agv
 
             if (id >= 1 && id <= AgvCount)
             {
+                if (!_isAgvOnline[id - 1])
+                {
+                    string[] names = { "小船", "石头", "松树" };
+                    Logger.Info($"AGV #{id} ({names[id - 1]}) 在线 - 接收到数据报文");
+                    _isAgvOnline[id - 1] = true;
+                }
                 _agvControls[id - 1].SetConnection(true);
                 _agvControls[id - 1].UpdateData(status);
             }
@@ -1228,9 +1265,11 @@ namespace WindowsFormsApp_agv
             {
                 var json = Newtonsoft.Json.JsonConvert.SerializeObject(_routes, Newtonsoft.Json.Formatting.Indented);
                 System.IO.File.WriteAllText(_persistFile, json);
+                Logger.Info($"Routes saved to file: {_persistFile}");
             }
             catch (Exception ex)
             {
+                Logger.Error("Failed to save routes to file", ex);
                 MessageBox.Show("保存到文件失败：" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
